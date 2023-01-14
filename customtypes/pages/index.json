@@ -1,0 +1,55 @@
+{
+  "id": "pages",
+  "label": "Pages",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "htmlTitle": {
+        "config": {
+          "label": "Html Title",
+          "placeholder": ""
+        },
+        "type": "Text"
+      },
+      "route": {
+        "type": "Text",
+        "config": {
+          "label": "Route",
+          "placeholder": ""
+        }
+      },
+      "layout": {
+        "config": {
+          "label": "Layout",
+          "customtypes": [
+            "layouts"
+          ],
+          "select": "document"
+        },
+        "type": "Link"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "image": {
+              "type": "SharedSlice"
+            },
+            "paragraph": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

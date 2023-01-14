@@ -1,0 +1,32 @@
+{
+  "_cts": {
+    "pages": {},
+    "redirect_link": {},
+    "layouts": {}
+  },
+  "slices": {
+    "Paragraph": {},
+    "Image": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "FooterMain": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "NavbarMain": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Children": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}

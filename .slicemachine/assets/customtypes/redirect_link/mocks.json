@@ -1,0 +1,11 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "few"
+  },
+  "route": {
+    "__TYPE__": "FieldContent",
+    "value": "knife",
+    "type": "Text"
+  }
+}

@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"baseUrl": ".",
+		"paths": {
+			"@slicemachine/*": [".slicemachine/*"],
+			"@customtypes/*": ["customtypes/*"],
+			"@slices/*": ["slices/*"],
+			"@components/*": ["components/*"],
+			"@pages/*": ["pages/*"],
+			"@core/*": ["core/*"],
+			"@utils/*": ["utils/*"],
+			"@root/*": ["*"]
+		},
+		"allowJs": false,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"incremental": true
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./.slicemachine/prismicio.d.ts"],
+	"exclude": ["node_modules"]
+}
+

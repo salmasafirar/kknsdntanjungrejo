@@ -1,0 +1,48 @@
+@layer components {
+	/* Built in loading state of every button */
+	button[data-loading='true'] {
+		@apply flex-cc;
+	}
+
+	button[data-loading='true'] i.spinner {
+		@apply inline-flex ml-2;
+	}
+
+	.container {
+		@apply w-full max-w-[1200px] mx-auto;
+	}
+
+	i.spinner {
+		display: none;
+		width: 16px;
+		height: 16px;
+		border: 3px solid;
+		border-color: #fff #fff5 #fff #fff5;
+		border-radius: 50%;
+		animation: spin 1.2s linear infinite;
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+
+	.work-list-with-title a:nth-child(1),
+	.work-list-with-title a:nth-child(4) {
+		@apply md:col-span-2;
+	}
+}
+

@@ -1,0 +1,34 @@
+{
+  "id": "layouts",
+  "label": "Layouts",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "footer_main": {
+              "type": "SharedSlice"
+            },
+            "navbar_main": {
+              "type": "SharedSlice"
+            },
+            "children": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}
