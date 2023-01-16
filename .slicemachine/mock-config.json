@@ -30,7 +30,8 @@
     },
     "Banner": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {}
       }
     }
   }

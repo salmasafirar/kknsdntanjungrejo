@@ -123,30 +123,40 @@ interface RedirectLinkDocumentData {
 export type RedirectLinkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<RedirectLinkDocumentData>, "redirect_link", Lang>;
 export type AllDocumentTypes = LayoutsDocument | PagesDocument | RedirectLinkDocument;
 /**
- * Primary content in Banner → Primary
+ * Item in Banner → Items
  *
  */
-interface BannerSliceDefaultPrimary {
+export interface BannerSliceDefaultItem {
     /**
-     * Title field in *Banner → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: banner.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * image field in *Banner → Primary*
+     * image field in *Banner → Items*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: banner.primary.image
+     * - **API ID Path**: banner.items[].image
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * title field in *Banner → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: banner.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * description field in *Banner → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: banner.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
 }
 /**
  * Default variation for Banner Slice
@@ -156,7 +166,7 @@ interface BannerSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type BannerSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<BannerSliceDefaultPrimary>, never>;
+export type BannerSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<BannerSliceDefaultItem>>;
 /**
  * Slice variation for *Banner*
  *
@@ -340,15 +350,15 @@ export interface NavbarMainSliceDefaultItem {
      */
     text: prismicT.KeyTextField;
     /**
-     * link field in *NavbarMain → Items*
+     * route field in *NavbarMain → Items*
      *
-     * - **Field Type**: Link
+     * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: navbar_main.items[].link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     * - **API ID Path**: navbar_main.items[].route
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    link: prismicT.LinkField;
+    route: prismicT.KeyTextField;
 }
 /**
  * Default variation for NavbarMain Slice
@@ -427,6 +437,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultPrimary, BannerSliceDefault, BannerSliceVariation, BannerSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice };
+        export type { LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice };
     }
 }

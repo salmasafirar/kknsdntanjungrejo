@@ -4,7 +4,6 @@
     "variation": "default",
     "primary": {
       "logo": {
-        "__TYPE__": "ImageContent",
         "origin": {
           "id": "main",
           "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
@@ -22,6 +21,9 @@
           },
           "background": "transparent"
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
       }
     },
@@ -38,13 +40,11 @@
             }
           ],
           [
-            "link",
+            "route",
             {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "ExternalLink",
-                "url": "http://google.com"
-              }
+              "__TYPE__": "FieldContent",
+              "value": "doubt",
+              "type": "Text"
             }
           ]
         ]
