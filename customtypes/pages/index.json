@@ -46,6 +46,9 @@
             },
             "paragraph": {
               "type": "SharedSlice"
+            },
+            "banner": {
+              "type": "SharedSlice"
             }
           }
         }

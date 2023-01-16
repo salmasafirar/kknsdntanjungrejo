@@ -27,6 +27,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "Banner": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }
