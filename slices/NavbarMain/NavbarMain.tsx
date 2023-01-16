@@ -26,40 +26,91 @@ const NavbarMain = ({
 }: SliceComponentProps<NavbarSliceType, ContextType>) => {
 	const { logo } = slice.primary;
 	const router = useRouter();
+	const [linkHovered, setLinkHovered] = React.useState({
+		width: 0,
+		left: 0
+	});
+	const [isScrolled, setIsScrolled] = React.useState(false);
+
+	React.useEffect(() => {
+		const handleScroll = () => {
+			const offset = window.scrollY;
+			if (offset > 100) {
+				setIsScrolled(true);
+			} else {
+				setIsScrolled(false);
+			}
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	const onHover = (e: any) => {
+		const el = e.target;
+		const width = el.offsetWidth;
+		const left = el.offsetLeft;
+		setLinkHovered({ width, left });
+	};
+
+	const leave = () => {
+		const el = document.querySelector(`a[href="${router.asPath}"]`);
+		if (el) {
+			const width = (el as any).offsetWidth;
+			const left = (el as any).offsetLeft;
+			setLinkHovered({ width, left });
+		}
+	};
+
+	// set initial link hover based on current route
+
+	React.useEffect(() => {
+		const el = document.querySelector(`a[href="${router.asPath}"]`);
+		if (el) {
+			const width = (el as any).offsetWidth;
+			const left = (el as any).offsetLeft;
+			setLinkHovered({ width, left });
+		}
+	}, []);
 
 	const { asPath } = router;
 
 	return (
 		<header
 			aria-label="Site Header"
-			className="bg-white fixed top-0 left-0 w-full z-30"
+			className="bg-white fixed top-0 left-0 w-full z-30 duration-200"
+			style={
+				!isScrolled
+					? { padding: '0.5rem 0', boxShadow: 'none' }
+					: { padding: '0', boxShadow: '0 2px 4px 0 rgba(0,0,0,0.15)' }
+			}
 			ref={upperRef}
 		>
 			<div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-				<div className="w-10 h-10">
+				<div
+					style={isScrolled ? { width: '40px', height: '40px' } : { width: '56px', height: '56px' }}
+					className="relative overflow-hidden duration-200"
+				>
 					{isFilled.image(logo) && (
 						<img src={logo.url} alt="" className="w-full h-full object-contain" />
 					)}
 				</div>
 				<div className="flex flex-1 items-center justify-end">
 					<nav aria-label="Site Nav" className="hidden md:block">
-						<ul className="flex items-center gap-6">
+						<ul className="flex items-center gap-6 relative" onMouseLeave={leave}>
 							{slice.items.map((item, index) => {
-								console.log(
-									[
-										['text-gray-500 transition hover:text-gray-500/75 py-8'],
-										asPath === item.route ? ['border-b-4 border-blue-500'] : ''
-									].join(' ')
-								);
 								if (isFilled.keyText(item.route))
 									return (
-										<li key={index}>
+										<li key={index} onMouseEnter={onHover}>
 											<div
 												// href={item.route}
 												className={[
-													['border-b-4'],
-													['text-gray-500 transition hover:text-gray-500/75 py-8'],
-													asPath === item.route ? ['border-blue-500'] : ['border-transparent']
+													// ['border-b-4'],
+													['transition hover:text-emerald-500 py-8'],
+													asPath === item.route ? ['text-emerald-500'] : ['text-gray-800']
 												].join(' ')}
 											>
 												<Link href={item.route}>{item.text}</Link>
@@ -67,6 +118,13 @@ const NavbarMain = ({
 										</li>
 									);
 							})}
+							<div
+								className="h-1 bg-emerald-500 absolute bottom-0 duration-200"
+								style={{
+									width: linkHovered.width,
+									left: linkHovered.left
+								}}
+							/>
 						</ul>
 					</nav>
 
