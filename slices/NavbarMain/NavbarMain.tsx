@@ -81,7 +81,7 @@ const NavbarMain = ({
 	return (
 		<header
 			aria-label="Site Header"
-			className="bg-white fixed top-0 left-0 w-full z-30 duration-200"
+			className="bg-white fixed top-0 left-0 w-full z-50 duration-200"
 			style={
 				!isScrolled
 					? { padding: '0.5rem 0', boxShadow: 'none' }
@@ -106,11 +106,9 @@ const NavbarMain = ({
 									return (
 										<li key={index} onMouseEnter={onHover}>
 											<div
-												// href={item.route}
 												className={[
-													// ['border-b-4'],
-													['transition hover:text-emerald-500 py-8'],
-													asPath === item.route ? ['text-emerald-500'] : ['text-gray-800']
+													['transition hover:text-green-500 py-8'],
+													asPath === item.route ? ['text-green-500'] : ['text-gray-800']
 												].join(' ')}
 											>
 												<Link href={item.route}>{item.text}</Link>
@@ -119,7 +117,7 @@ const NavbarMain = ({
 									);
 							})}
 							<div
-								className="h-1 bg-emerald-500 absolute bottom-0 duration-200"
+								className="h-1 bg-green-500 absolute bottom-0 duration-200"
 								style={{
 									width: linkHovered.width,
 									left: linkHovered.left

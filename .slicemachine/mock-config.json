@@ -31,7 +31,14 @@
     "Banner": {
       "default": {
         "primary": {},
-        "items": {}
+        "items": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }

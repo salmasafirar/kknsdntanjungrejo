@@ -34,31 +34,33 @@
             }
           ],
           [
-            "title",
+            "text",
             {
               "__TYPE__": "StructuredTextContent",
               "value": [
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Ad voluptate laboris ad fugiat non labore."
+                    "text": "Exercitation elit reprehenderit nisi eu."
                   }
                 }
               ]
             }
           ],
           [
-            "description",
+            "button",
             {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "In voluptate eu ipsum."
-                  }
-                }
-              ]
+              "__TYPE__": "FieldContent",
+              "value": "instant",
+              "type": "Text"
+            }
+          ],
+          [
+            "href",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "lie",
+              "type": "Text"
             }
           ]
         ]

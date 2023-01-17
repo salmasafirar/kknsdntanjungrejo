@@ -138,25 +138,35 @@ export interface BannerSliceDefaultItem {
      */
     image: prismicT.ImageField<never>;
     /**
-     * title field in *Banner → Items*
+     * text field in *Banner → Items*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: banner.items[].title
+     * - **API ID Path**: banner.items[].text
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    title: prismicT.RichTextField;
+    text: prismicT.RichTextField;
     /**
-     * description field in *Banner → Items*
+     * button field in *Banner → Items*
      *
-     * - **Field Type**: Rich Text
+     * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: banner.items[].description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     * - **API ID Path**: banner.items[].button
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    description: prismicT.RichTextField;
+    button: prismicT.KeyTextField;
+    /**
+     * href field in *Banner → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: banner.items[].href
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    href: prismicT.KeyTextField;
 }
 /**
  * Default variation for Banner Slice
