@@ -7,7 +7,7 @@ const FooterMain = ({
 	context: { lowerRef }
 }: SliceComponentProps<FooterMainSlice, ContextType>) => {
 	return (
-		<footer aria-label="Site Footer" className="bg-white">
+		<footer aria-label="Site Footer" className="bg-white" ref={lowerRef}>
 			<div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 					<div>

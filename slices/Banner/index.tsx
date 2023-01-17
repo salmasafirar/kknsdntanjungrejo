@@ -98,16 +98,20 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 	}, [reset]);
 
 	return (
-		<section className="relative w-full pt-24 group">
+		<section className="relative w-full pt-10 md:pt-24 group">
 			<div className="absolute inset-0 w-full z-20">
 				<div className="container max-w-7xl mx-auto h-full flex flex-col justify-center">
 					<div>
 						<PrismicRichText
 							field={slice.items[step].text}
 							components={{
-								paragraph: ({ children }) => <p className="text-white text-2xl mb-3">{children}</p>,
+								paragraph: ({ children }) => (
+									<p className="text-white text-md md:text-2xl mb-3">{children}</p>
+								),
 								heading1: ({ children }) => (
-									<h1 className="text-7xl font-semibold text-white">{children}</h1>
+									<h1 className="text-3xl md:text-5xl lg:text-7xl font-semibold text-white">
+										{children}
+									</h1>
 								),
 								strong: ({ children }) => (
 									<div className="bg-green-400 py-2 px-4 w-max">{children}</div>
@@ -119,7 +123,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 						{isFilled.keyText(slice.items[step].button) && (
 							<Link
 								href="/"
-								className="mt-10 inline-block bg-white px-5 py-3 text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
+								className="mt-10 inline-block bg-white px-5 py-3 text-sm md:text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
 							>
 								<div>{slice.items[step].button}</div>
 							</Link>
@@ -136,7 +140,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 
 							return (
 								<div
-									className="flex flex-col items-center justify-center w-full h-[700px] relative embla__slide"
+									className="flex flex-col items-center justify-center w-full h-[500px] md:h-[600px] lg:h-[700px] relative embla__slide"
 									key={idx}
 								>
 									{isFilled.image(image) && (
@@ -150,7 +154,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 
 				<div className="absolute inset-0 bg-gradient-to-r from-gray-700 to-transparent z-10"></div>
 
-				<div className="absolute left-5 z-30 h-full top-0 flex items-center -translate-x-4 opacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-0 ">
+				<div className="absolute left-5 z-30 h-full -sm:pb-4 top-0 flex items-end sm:items-center sm:-translate-x-4 sm:opacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-0 ">
 					<button className="embla__prev bg-white w-10 h-10 p-2 shadow-md" onClick={scrollPrev}>
 						<svg
 							aria-hidden="true"
@@ -164,7 +168,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 						</svg>
 					</button>
 				</div>
-				<div className="absolute right-5 z-30 h-full top-0 flex items-center translate-x-4 opacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-0 ">
+				<div className="absolute right-5 z-30 h-full -sm:pb-4 top-0 flex items-end sm:items-center sm:translate-x-4 osm:pacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-0 ">
 					<button className="embla__prev bg-white w-10 h-10 p-2 shadow-md" onClick={scrollNext}>
 						<svg
 							aria-hidden="true"

@@ -81,12 +81,10 @@ const NavbarMain = ({
 	return (
 		<header
 			aria-label="Site Header"
-			className="bg-white fixed top-0 left-0 w-full z-50 duration-200"
-			style={
-				!isScrolled
-					? { padding: '0.5rem 0', boxShadow: 'none' }
-					: { padding: '0', boxShadow: '0 2px 4px 0 rgba(0,0,0,0.15)' }
-			}
+			className={[
+				['bg-white fixed top-0 left-0 w-full z-50 duration-200 py-2'],
+				!isScrolled ? ['md:py-2'] : ['md:py-0 shadow-md']
+			].join(' ')}
 			ref={upperRef}
 		>
 			<div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
