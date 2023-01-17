@@ -168,7 +168,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 						</svg>
 					</button>
 				</div>
-				<div className="absolute right-5 z-30 h-full -sm:pb-4 top-0 flex items-end sm:items-center sm:translate-x-4 osm:pacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-0 ">
+				<div className="absolute right-5 z-30 h-full -sm:pb-4 top-0 flex items-end sm:items-center sm:translate-x-4 sm:opacity-0 group-hover:opacity-100 duration-300 group-hover:translate-x-0 ">
 					<button className="embla__prev bg-white w-10 h-10 p-2 shadow-md" onClick={scrollNext}>
 						<svg
 							aria-hidden="true"
