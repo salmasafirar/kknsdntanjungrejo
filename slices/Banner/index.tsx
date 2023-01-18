@@ -98,8 +98,8 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 	}, [reset]);
 
 	return (
-		<section className="relative w-full pt-10 md:pt-24 group">
-			<div className="absolute inset-0 w-full z-20">
+		<section className="relative w-full group">
+			<div className="absolute inset-0 w-full z-20 pt-10 md:pt-24 ">
 				<div className="container max-w-7xl mx-auto h-full flex flex-col justify-center">
 					<div>
 						<PrismicRichText
@@ -109,12 +109,12 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 									<p className="text-white text-md md:text-2xl mb-3">{children}</p>
 								),
 								heading1: ({ children }) => (
-									<h1 className="text-3xl md:text-5xl lg:text-7xl font-semibold text-white">
+									<h1 className="text-3xl md:text-5xl lg:text-7xl font-semibold text-white w-full">
 										{children}
 									</h1>
 								),
 								strong: ({ children }) => (
-									<div className="bg-green-400 py-2 px-4 w-max">{children}</div>
+									<div className="bg-green-400 py-2 px-4 w-max max-w-full">{children}</div>
 								)
 							}}
 						/>
@@ -123,7 +123,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 						{isFilled.keyText(slice.items[step].button) && (
 							<Link
 								href="/"
-								className="mt-10 inline-block bg-white px-5 py-3 text-sm md:text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
+								className="mt-6 md:mt-10 inline-block bg-white px-5 py-3 text-sm md:text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
 							>
 								<div>{slice.items[step].button}</div>
 							</Link>

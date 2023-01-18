@@ -21,7 +21,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
 	return (
 		<>
 			<ProgressBar
-				color="#000"
+				color="rgba(34, 197, 94, 1)"
 				startPosition={0.3}
 				stopDelayMs={200}
 				height={3}
@@ -40,4 +40,3 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
 };
 
 export default App;
-

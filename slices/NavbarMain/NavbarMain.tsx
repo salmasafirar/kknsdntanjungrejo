@@ -35,7 +35,7 @@ const NavbarMain = ({
 	React.useEffect(() => {
 		const handleScroll = () => {
 			const offset = window.scrollY;
-			if (offset > 100) {
+			if (offset > 70) {
 				setIsScrolled(true);
 			} else {
 				setIsScrolled(false);
@@ -82,12 +82,12 @@ const NavbarMain = ({
 		<header
 			aria-label="Site Header"
 			className={[
-				['bg-white fixed top-0 left-0 w-full z-50 duration-200 py-2'],
-				!isScrolled ? ['md:py-2'] : ['md:py-0 shadow-md']
+				['bg-white fixed left-0 w-full z-50 duration-200 py-2'],
+				!isScrolled ? ['md:py-2 top-11 md:top-12'] : ['md:py-0 shadow-md top-0']
 			].join(' ')}
 			ref={upperRef}
 		>
-			<div className="mx-auto flex max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
+			<div className="mx-auto flex max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
 				<div
 					style={isScrolled ? { width: '40px', height: '40px' } : { width: '56px', height: '56px' }}
 					className="relative overflow-hidden duration-200"
@@ -103,19 +103,21 @@ const NavbarMain = ({
 								if (isFilled.keyText(item.route))
 									return (
 										<li key={index} onMouseEnter={onHover}>
-											<div
-												className={[
-													['transition hover:text-green-500 py-8'],
-													asPath === item.route ? ['text-green-500'] : ['text-gray-800']
-												].join(' ')}
-											>
-												<Link href={item.route}>{item.text}</Link>
-											</div>
+											<Link href={item.route}>
+												<div
+													className={[
+														['transition hover:text-green-500 py-8'],
+														asPath === item.route ? ['text-green-500'] : ['text-gray-800']
+													].join(' ')}
+												>
+													{item.text}
+												</div>
+											</Link>
 										</li>
 									);
 							})}
 							<div
-								className="h-1 bg-green-500 absolute bottom-0 duration-200"
+								className="h-1.5 bg-green-500 absolute bottom-0 duration-200"
 								style={{
 									width: linkHovered.width,
 									left: linkHovered.left
