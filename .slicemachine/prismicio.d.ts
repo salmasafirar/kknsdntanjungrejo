@@ -229,6 +229,16 @@ interface FooterMainSliceDefaultPrimary {
      *
      */
     logo: prismicT.ImageField<never>;
+    /**
+     * address field in *FooterMain → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_main.primary.address
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    address: prismicT.RichTextField;
 }
 /**
  * Item in FooterMain → Items
