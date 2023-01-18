@@ -89,7 +89,7 @@ const NavbarMain = ({
 		>
 			<div className="mx-auto flex max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
 				<div
-					style={isScrolled ? { width: '40px', height: '40px' } : { width: '56px', height: '56px' }}
+					style={isScrolled ? { height: '64px' } : { height: '80px' }}
 					className="relative overflow-hidden duration-200"
 				>
 					{isFilled.image(logo) && (
