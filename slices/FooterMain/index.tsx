@@ -4,8 +4,10 @@ import { FooterMainSlice } from '@slicemachine/prismicio';
 import { ContextType } from '@core/prismic/types';
 
 const FooterMain = ({
+	slice,
 	context: { lowerRef }
 }: SliceComponentProps<FooterMainSlice, ContextType>) => {
+	console.log(slice);
 	return (
 		<footer aria-label="Site Footer" className="bg-white" ref={lowerRef}>
 			<div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
