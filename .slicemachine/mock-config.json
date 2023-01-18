@@ -2,7 +2,21 @@
   "_cts": {
     "pages": {},
     "redirect_link": {},
-    "layouts": {}
+    "layouts": {},
+    "berita": {
+      "title": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "Paragraph": {},
@@ -39,6 +53,11 @@
             }
           }
         }
+      }
+    },
+    "BeritaOverview": {
+      "default": {
+        "primary": {}
       }
     }
   }

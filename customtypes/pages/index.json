@@ -49,6 +49,9 @@
             },
             "banner": {
               "type": "SharedSlice"
+            },
+            "berita_overview": {
+              "type": "SharedSlice"
             }
           }
         }

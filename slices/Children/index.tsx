@@ -15,7 +15,7 @@ const Children = ({ context }: SliceComponentProps<Content.ChildrenSlice, Contex
 			<div className="w-full bg-green-400 py-3">
 				<div className="container max-w-7xl mx-auto">
 					<div className="flex justify-between items-center marquee">
-						<p className="text-white text-sm md:text-base -md:hidden flex items-center space-x-2">
+						<p className="text-white text-xs md:text-sm flex items-center space-x-2">
 							<span>
 								<svg
 									className="w-6 h-6"
@@ -35,7 +35,7 @@ const Children = ({ context }: SliceComponentProps<Content.ChildrenSlice, Contex
 							</span>
 							<span>sdntanjungrejo01@gmail.com</span>
 						</p>
-						<div className="text-white text-sm md:text-base">
+						<div className="text-white text-xs md:text-sm -md:hidden ">
 							Selamat datang di website SDN Tanjungrejo 01
 						</div>
 					</div>

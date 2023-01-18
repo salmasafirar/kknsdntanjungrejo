@@ -25,6 +25,9 @@ const linkResolver = (link) => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: false,
+	images: {
+		domains: ['images.prismic.io']
+	},
 	// the sitemap object is picked up by the package.
 	sitemap: {
 		linkResolver: linkResolver,
@@ -47,4 +50,3 @@ const nextConfig = {
 };
 
 module.exports = withPrismicSitemap(nextConfig);
-

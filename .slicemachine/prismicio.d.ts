@@ -6,6 +6,63 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Berita documents */
+interface BeritaDocumentData {
+    /**
+     * Title field in *Berita*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Judul berita
+     * - **API ID Path**: berita.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Description field in *Berita*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Deskripsi berita
+     * - **API ID Path**: berita.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Date field in *Berita*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: Tanggal berita dibuat
+     * - **API ID Path**: berita.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
+     * Image field in *Berita*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: berita.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Berita document from Prismic
+ *
+ * - **API ID**: `berita`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BeritaDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BeritaDocumentData>, "berita", Lang>;
 /** Content for Layouts documents */
 interface LayoutsDocumentData {
     /**
@@ -86,7 +143,7 @@ interface PagesDocumentData {
  * Slice for *Pages → Slice Zone*
  *
  */
-type PagesDocumentDataSlicesSlice = ImageSlice | ParagraphSlice | BannerSlice;
+type PagesDocumentDataSlicesSlice = ImageSlice | ParagraphSlice | BannerSlice | BeritaOverviewSlice;
 /**
  * Pages document from Prismic
  *
@@ -121,7 +178,7 @@ interface RedirectLinkDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type RedirectLinkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<RedirectLinkDocumentData>, "redirect_link", Lang>;
-export type AllDocumentTypes = LayoutsDocument | PagesDocument | RedirectLinkDocument;
+export type AllDocumentTypes = BeritaDocument | LayoutsDocument | PagesDocument | RedirectLinkDocument;
 /**
  * Item in Banner → Items
  *
@@ -191,6 +248,29 @@ type BannerSliceVariation = BannerSliceDefault;
  *
  */
 export type BannerSlice = prismicT.SharedSlice<"banner", BannerSliceVariation>;
+/**
+ * Default variation for BeritaOverview Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `BeritaOverview`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BeritaOverviewSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, never>;
+/**
+ * Slice variation for *BeritaOverview*
+ *
+ */
+type BeritaOverviewSliceVariation = BeritaOverviewSliceDefault;
+/**
+ * BeritaOverview Shared Slice
+ *
+ * - **API ID**: `berita_overview`
+ * - **Description**: `BeritaOverview`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BeritaOverviewSlice = prismicT.SharedSlice<"berita_overview", BeritaOverviewSliceVariation>;
 /**
  * Default variation for Children Slice
  *
@@ -457,6 +537,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice };
+        export type { BeritaDocumentData, BeritaDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice };
     }
 }
