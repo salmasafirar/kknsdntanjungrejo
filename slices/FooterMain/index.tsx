@@ -5,10 +5,6 @@ import { ContextType } from '@core/prismic/types';
 import { isFilled } from '@prismicio/helpers';
 import * as PrismicT from '@prismicio/types';
 
-type Primary = {
-	logo: PrismicT.ImageField;
-};
-
 const FooterMain = ({
 	slice,
 	context: { lowerRef }
@@ -16,7 +12,7 @@ const FooterMain = ({
 	const { logo, address } = slice.primary;
 	return (
 		<footer aria-label="Site Footer" className="bg-white" ref={lowerRef}>
-			<div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
+			<div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-16">
 				<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 					<div>
 						<div className="flex justify-center text-teal-600 sm:justify-start">
@@ -85,7 +81,7 @@ const FooterMain = ({
 							<PrismicRichText field={address} />
 						</div>
 
-						<ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+						{/* <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
 							<li>
 								<a
 									href="/"
@@ -196,7 +192,7 @@ const FooterMain = ({
 									</svg>
 								</a>
 							</li>
-						</ul>
+						</ul> */}
 					</div>
 
 					<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
