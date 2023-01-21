@@ -37,7 +37,10 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({
 
 		const newsPromises = client
 			.getAllByType('berita', {
-				orderings: '[my.berita.date desc]'
+				orderings: {
+					field: 'my.berita.date',
+					direction: 'desc'
+				}
 			})
 			.then((res) => res);
 

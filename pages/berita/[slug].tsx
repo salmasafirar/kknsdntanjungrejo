@@ -1,30 +1,47 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import {
-	LayoutContentType,
-	PageProps,
-	queryByRoute,
-	queryByUID,
-	queryLayout
-} from '@core/prismic/client';
+import { queryByUID, queryLayout } from '@core/prismic/client';
 import { createClient } from '@core/prismic/client';
 import DynamicLayout from '@components/_layouts/DynamicLayout';
-import { PrismicRichText, SliceZone } from '@prismicio/react';
-import { components } from '@slices/index';
 import { asText, isFilled } from '@prismicio/helpers';
 import { isLayoutData, notEmpty } from '@core/utils/check';
+import Image from 'next/image';
+import { format as formatDate } from 'date-fns';
+import { PrismicRichText, SliceZone } from '@prismicio/react';
+import { components } from '@slices/index';
 
 const CustomPage = ({ content, layout_content }: any): JSX.Element => {
 	const router = useRouter();
 
 	const title = asText(content.title);
 
+	const date = new Date(content.date);
+
 	return (
 		<DynamicLayout content={layout_content} title={title} key={router.asPath}>
-			<div className="pt-36">
-				<PrismicRichText field={content.title} />
-			</div>
+			<section className="w-full pt-20 md:pt-32 lg:pt-36">
+				<div className="max-w-3xl container mx-auto mb-10">
+					<h1 className="text-4xl font-bold">{title}</h1>
+					<p className="mt-4 text-sm">{formatDate(date, 'dd MMMM yyyy')}</p>
+					<div className="mt-4">
+						<PrismicRichText field={content.description} />
+					</div>
+				</div>
+				<div className="max-w-4xl mx-auto">
+					<div className="w-full h-[200px] md:h-[300px] lg:h-[450px] relative mx-auto">
+						<Image
+							src={content.image.url}
+							alt={content.image.alt || 'cover'}
+							objectFit="cover"
+							layout="fill"
+						/>
+					</div>
+				</div>
+				<div className="max-w-3xl container mx-auto mt-10 pb-10">
+					<SliceZone slices={content.slices} components={components} />
+				</div>
+			</section>
 			{/* <SliceZone slices={content.slices} components={components} /> */}
 		</DynamicLayout>
 	);
@@ -37,8 +54,6 @@ export const getStaticProps = async ({ params, previewData }: any) => {
 		const client = createClient({ previewData: previewData });
 		const PageDoc = await queryByUID(client, 'berita', slug);
 		const content = PageDoc.data;
-
-		console.log(content);
 
 		const layoutId = content.layout.uid;
 

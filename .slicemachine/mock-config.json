@@ -21,7 +21,18 @@
     "agenda": {}
   },
   "slices": {
-    "Paragraph": {},
+    "Paragraph": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
     "Image": {
       "default": {
         "primary": {}

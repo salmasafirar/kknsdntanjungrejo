@@ -16,7 +16,14 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({ pr
 		const PageDoc = await queryByRoute(client, '/');
 		const content = PageDoc.data;
 
-		const newsPromises = client.getAllByType('berita').then((res) => res);
+		const newsPromises = client
+			.getAllByType('berita', {
+				orderings: {
+					field: 'my.berita.date',
+					direction: 'desc'
+				}
+			})
+			.then((res) => res);
 
 		const agendaPromises = client.getAllByType('agenda').then((res) => res);
 

@@ -120,7 +120,23 @@ interface BeritaDocumentData {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Slice Zone field in *Berita*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: berita.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<BeritaDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Berita → Slice Zone*
+ *
+ */
+type BeritaDocumentDataSlicesSlice = ParagraphSlice | ImageSlice;
 /**
  * Berita document from Prismic
  *
@@ -268,7 +284,7 @@ interface PagesDocumentData {
  * Slice for *Pages → Slice Zone*
  *
  */
-type PagesDocumentDataSlicesSlice = ImageSlice | ParagraphSlice | BannerSlice | BeritaOverviewSlice | TentangSlice;
+type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice;
 /**
  * Pages document from Prismic
  *
@@ -614,25 +630,15 @@ export type NavbarMainSlice = prismicT.SharedSlice<"navbar_main", NavbarMainSlic
  */
 interface ParagraphSliceDefaultPrimary {
     /**
-     * Title field in *Paragraph → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: paragraph.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Paragraph → Primary*
+     * Text field in *Paragraph → Primary*
      *
      * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: paragraph.primary.description
+     * - **Placeholder**: *None*
+     * - **API ID Path**: paragraph.primary.text
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    description: prismicT.RichTextField;
+    text: prismicT.RichTextField;
 }
 /**
  * Default variation for Paragraph Slice
@@ -721,6 +727,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
     }
 }

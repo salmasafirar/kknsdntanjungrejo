@@ -30,15 +30,17 @@ const DynamicLayout = ({ children, content, title }: Props): JSX.Element => {
 				</p>
 			)}
 			<SliceZone
-				context={{
-					minHeight,
-					upperRef,
-					lowerRef,
-					children: {
-						children,
-						minHeight
-					}
-				}}
+				context={
+					{
+						minHeight,
+						upperRef,
+						lowerRef,
+						children: {
+							children,
+							minHeight
+						}
+					} as any
+				}
 				slices={content.slices}
 				components={components}
 			/>
@@ -47,4 +49,3 @@ const DynamicLayout = ({ children, content, title }: Props): JSX.Element => {
 };
 
 export default DynamicLayout;
-

@@ -62,7 +62,11 @@ const NavbarMain = ({
 			const width = (el as any).offsetWidth;
 			const left = (el as any).offsetLeft;
 			setLinkHovered({ width, left });
+
+			return;
 		}
+
+		setLinkHovered({ width: 0, left: 0 });
 	};
 
 	// set initial link hover based on current route
