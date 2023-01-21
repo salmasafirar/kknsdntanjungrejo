@@ -12,9 +12,9 @@ const Tentang = ({ slice }: any) => {
 
 	return (
 		<section>
-			<div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-				<div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-					<div className="relative z-10 lg:py-16">
+			<div className="mx-auto max-w-7xl px-4 pb-10 pt-16 md:pt-20 md:py-14 sm:px-6 lg:px-8">
+				<div className="grid grid-cols-1 lg:h-[500px] lg:grid-cols-2">
+					<div className="relative z-10">
 						<div className="relative h-64 sm:h-80 lg:h-full">
 							<img
 								className="absolute inset-0 h-full w-full object-cover"
@@ -27,15 +27,25 @@ const Tentang = ({ slice }: any) => {
 						<span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
 
 						<div className="p-8 sm:p-16 lg:p-26">
-							<div className="text-2xl font-bold sm:text-3xl">
-								{slice.primary.title ? (
-									<PrismicRichText field={slice.primary.title} />
-								) : (
-									<h2>Template slice, update me!</h2>
+							<div className="flex items-center space-x-2 md-0 md:mb-4">
+								{slice.primary.title && (
+									<PrismicRichText
+										field={slice.primary.title}
+										components={{
+											heading1: ({ children }) => (
+												<h1 className="text-2xl font-bold sm:text-3xl">{children}</h1>
+											),
+											strong: ({ children }) => (
+												<div className="py-1 px-2 bg-green-500 text-white w-max mb-2">
+													{children}
+												</div>
+											)
+										}}
+									/>
 								)}
 							</div>
 
-							<div className="mt-4 text-gray-600 text-justify">
+							<div className="mt-4 text-gray-600 text-justify -md:text-sm">
 								{slice.primary.description ? (
 									<PrismicRichText field={slice.primary.description} />
 								) : (
