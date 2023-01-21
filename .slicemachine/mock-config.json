@@ -16,7 +16,9 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "gallery": {},
+    "agenda": {}
   },
   "slices": {
     "Paragraph": {},

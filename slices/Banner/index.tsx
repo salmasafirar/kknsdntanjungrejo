@@ -123,7 +123,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 						{isFilled.keyText(slice.items[step].button) && (
 							<Link
 								href="/"
-								className="mt-6 md:mt-10 inline-block bg-white px-5 py-3 text-sm md:text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
+								className="mt-6 md:mt-10 inline-block bg-white px-5 py-3 text-xs sm:text-sm md:text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
 							>
 								<div>{slice.items[step].button}</div>
 							</Link>

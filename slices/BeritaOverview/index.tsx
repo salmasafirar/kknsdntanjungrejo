@@ -13,7 +13,7 @@ import Image from 'next/image';
 const BeritaOverview = ({ slice }: SliceComponentProps<BeritaOverviewSlice, ContextType>) => {
 	console.log('test');
 	return (
-		<section className="w-full py-20">
+		<section className="w-full py-14 md:py-20">
 			<div className="max-w-7xl container mx-auto">
 				<div className="flex justify-between items-center">
 					<h1 className="text-lg sm:text-xl lg:text-3xl font-semibold">Berita terkini</h1>
@@ -41,16 +41,32 @@ const NewsCard = () => {
 					objectFit="cover"
 					className="group-hover/card:scale-110 duration-300 brightness-90 group-hover/card:brightness-100"
 				/>
+				<div className="absolute top-0 right-0 md:m-2 p-1 z-10 bg-green-500 flex items-center space-x-1">
+					<svg
+						aria-hidden="true"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth={1.5}
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						className="w-4 h-4 text-white"
+					>
+						<path
+							d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						/>
+					</svg>
+					<p className="text-xs font-medium text-white">1 September 2021</p>
+				</div>
 			</div>
-			<div className="px-2 md:px-4 py-4 md:py-6 duration-300">
+			<div className="px-2 md:px-4 py-4 md:py-5 duration-300">
 				<div className="relative">
-					<h1 className="text-xl -sm:text-lg font-semibold px-3 duration-300 w-full line-clamp-1">
+					<h1 className="text-xl -sm:text-lg font-semibold w-full line-clamp-2 group-hover/card:text-green-500">
 						Lorem ipsum dolor sit amet dolor sit amet Lorem ipsum
 					</h1>
-					<div className="absolute left-0 top-0 w-1 h-full bg-green-500 duration-300"></div>
 				</div>
-				<div className="mt-4 text-sm font-semibold -sm:text-xs">3 hari yang lalu</div>
-				<p className="text-gray-500 mt-2 line-clamp-2 -sm:text-sm">
+				<p className="text-gray-500 mt-4 line-clamp-2 text-sm">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. dolor sit amet
 					consectetur adipisicing elit
 				</p>

@@ -1,0 +1,50 @@
+{
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Reprehenderit incididunt aute excepteur ut excepteur."
+        }
+      }
+    ]
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Elit reprehenderit non et Lorem sunt proident irure voluptate ex nostrud elit ea velit. Mollit voluptate mollit do ipsum consectetur voluptate sint voluptate sint aliqua ipsum."
+        }
+      }
+    ]
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+      "width": 8640,
+      "height": 8640
+    },
+    "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+    "width": 8640,
+    "height": 8640,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2019-05-15"
+  }
+}

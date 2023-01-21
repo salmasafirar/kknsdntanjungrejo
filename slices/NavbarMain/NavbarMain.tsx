@@ -83,7 +83,7 @@ const NavbarMain = ({
 			aria-label="Site Header"
 			className={[
 				['bg-white fixed left-0 w-full z-50 duration-200 py-2'],
-				!isScrolled ? ['md:py-2 top-11 md:top-12'] : ['md:py-0 shadow-md top-0']
+				!isScrolled ? ['md:py-2 top-11 md:top-12'] : ['md:py-0 shadow-sm top-0']
 			].join(' ')}
 			ref={upperRef}
 		>
