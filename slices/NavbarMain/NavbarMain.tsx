@@ -26,6 +26,7 @@ const NavbarMain = ({
 }: SliceComponentProps<NavbarSliceType, ContextType>) => {
 	const { logo } = slice.primary;
 	const router = useRouter();
+	const { asPath } = router;
 	const [linkHovered, setLinkHovered] = React.useState({
 		width: 0,
 		left: 0
@@ -80,7 +81,9 @@ const NavbarMain = ({
 		}
 	}, []);
 
-	const { asPath } = router;
+	const goHome = () => {
+		router.push('/');
+	};
 
 	return (
 		<header
@@ -92,16 +95,17 @@ const NavbarMain = ({
 			ref={upperRef}
 		>
 			<div className="mx-auto flex max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-				<Link href="/">
-					<div
-						style={isScrolled ? { height: '64px' } : { height: '80px' }}
-						className="relative overflow-hidden duration-200"
-					>
-						{isFilled.image(logo) && (
-							<img src={logo.url} alt="" className="w-full h-full object-contain" />
-						)}
-					</div>
-				</Link>
+				{/* <Link href="/"> */}
+				<div
+					onClick={goHome}
+					style={isScrolled ? { height: '64px' } : { height: '80px' }}
+					className="relative overflow-hidden duration-200 cursor-pointer"
+				>
+					{isFilled.image(logo) && (
+						<img src={logo.url} alt="" className="w-full h-full object-contain" />
+					)}
+				</div>
+				{/* </Link> */}
 				<div className="flex flex-1 items-center justify-end">
 					<nav aria-label="Site Nav" className="hidden md:block">
 						<ul className="flex items-center gap-6 relative" onMouseLeave={leave}>

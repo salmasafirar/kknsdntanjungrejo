@@ -17,7 +17,6 @@ const BeritaOverview = ({
 }: SliceComponentProps<BeritaOverviewSlice, ContextType>) => {
 	const { news } = context;
 
-	console.log(news);
 	const limitedNews = useMemo(() => news.slice(0, 3), [news]);
 	return (
 		<section className="w-full py-10 md:py-14">

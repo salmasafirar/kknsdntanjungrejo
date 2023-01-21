@@ -20,11 +20,13 @@ const CustomPage = ({ content, layout_content }: any): JSX.Element => {
 
 	return (
 		<DynamicLayout content={layout_content} title={title} key={router.asPath}>
-			<section className="w-full pt-20 md:pt-32 lg:pt-36">
-				<div className="max-w-3xl container mx-auto mb-10">
-					<h1 className="text-4xl font-bold">{title}</h1>
-					<p className="mt-4 text-sm">{formatDate(date, 'dd MMMM yyyy')}</p>
-					<div className="mt-4">
+			<section className="w-full pt-28 md:pt-32 lg:pt-36">
+				<div className="max-w-3xl container mx-auto mb-8 md:mb-10">
+					<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{title}</h1>
+					<p className="mt-4 text-xs md:text-sm py-1 px-2 text-white bg-green-500 w-max">
+						{formatDate(date, 'dd MMMM yyyy')}
+					</p>
+					<div className="-md:text-sm mt-4">
 						<PrismicRichText field={content.description} />
 					</div>
 				</div>
