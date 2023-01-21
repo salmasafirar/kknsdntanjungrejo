@@ -1,0 +1,38 @@
+{
+  "id": "agenda",
+  "label": "Agenda",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "waktu": {
+        "type": "Text",
+        "config": {
+          "label": "Waktu",
+          "placeholder": ""
+        }
+      },
+      "tempat": {
+        "type": "Text",
+        "config": {
+          "label": "Tempat",
+          "placeholder": ""
+        }
+      },
+      "tanggal": {
+        "type": "Date",
+        "config": {
+          "label": "Tanggal",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
