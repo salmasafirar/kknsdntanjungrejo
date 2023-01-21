@@ -9,16 +9,7 @@ import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
 import Tentang from './Tentang';
 
-export {
-	Banner,
-	BeritaOverview,
-	Children,
-	FooterMain,
-	Image,
-	NavbarMain,
-	Paragraph,
-	Tentang,
-};
+export { Banner, BeritaOverview, Children, FooterMain, Image, NavbarMain, Paragraph, Tentang };
 
 export const components = {
 	banner: Banner,
@@ -28,5 +19,5 @@ export const components = {
 	image: Image,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
-	tentang: Tentang,
+	tentang: Tentang
 };

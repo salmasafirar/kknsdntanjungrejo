@@ -7,7 +7,7 @@ import { isFilled } from '@prismicio/helpers';
  * @typedef {import("@prismicio/react").SliceComponentProps<TentangSlice>} TentangProps
  * @param { TentangProps }
  */
-const Tentang = ({ slice }) => {
+const Tentang = ({ slice }: any) => {
 	console.log(slice);
 
 	return (
@@ -42,4 +42,3 @@ const Tentang = ({ slice }) => {
 };
 
 export default Tentang;
-
