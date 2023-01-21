@@ -92,14 +92,16 @@ const NavbarMain = ({
 			ref={upperRef}
 		>
 			<div className="mx-auto flex max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-				<div
-					style={isScrolled ? { height: '64px' } : { height: '80px' }}
-					className="relative overflow-hidden duration-200"
-				>
-					{isFilled.image(logo) && (
-						<img src={logo.url} alt="" className="w-full h-full object-contain" />
-					)}
-				</div>
+				<Link href="/">
+					<div
+						style={isScrolled ? { height: '64px' } : { height: '80px' }}
+						className="relative overflow-hidden duration-200"
+					>
+						{isFilled.image(logo) && (
+							<img src={logo.url} alt="" className="w-full h-full object-contain" />
+						)}
+					</div>
+				</Link>
 				<div className="flex flex-1 items-center justify-end">
 					<nav aria-label="Site Nav" className="hidden md:block">
 						<ul className="flex items-center gap-6 relative" onMouseLeave={leave}>
