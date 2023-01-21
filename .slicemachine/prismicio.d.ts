@@ -532,11 +532,60 @@ type ParagraphSliceVariation = ParagraphSliceDefault;
  *
  */
 export type ParagraphSlice = prismicT.SharedSlice<"paragraph", ParagraphSliceVariation>;
+/**
+ * Primary content in Tentang → Primary
+ *
+ */
+interface TentangSliceDefaultPrimary {
+    /**
+     * Title field in *Tentang → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: tentang.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Tentang → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: tentang.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Tentang Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Tentang`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TentangSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TentangSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Tentang*
+ *
+ */
+type TentangSliceVariation = TentangSliceDefault;
+/**
+ * Tentang Shared Slice
+ *
+ * - **API ID**: `tentang`
+ * - **Description**: `Tentang`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TentangSlice = prismicT.SharedSlice<"tentang", TentangSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BeritaDocumentData, BeritaDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice };
+        export type { BeritaDocumentData, BeritaDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
     }
 }

@@ -7,8 +7,18 @@ import FooterMain from './FooterMain';
 import Image from './Image';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
+import Tentang from './Tentang';
 
-export { Banner, BeritaOverview, Children, FooterMain, Image, NavbarMain, Paragraph };
+export {
+	Banner,
+	BeritaOverview,
+	Children,
+	FooterMain,
+	Image,
+	NavbarMain,
+	Paragraph,
+	Tentang,
+};
 
 export const components = {
 	banner: Banner,
@@ -17,6 +27,6 @@ export const components = {
 	footer_main: FooterMain,
 	image: Image,
 	navbar_main: NavbarMain,
-	paragraph: Paragraph
+	paragraph: Paragraph,
+	tentang: Tentang,
 };
-

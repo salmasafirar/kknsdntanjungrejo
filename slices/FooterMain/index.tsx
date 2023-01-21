@@ -376,7 +376,7 @@ const FooterMain = ({
 				<div className="mt-12 border-t border-gray-100 pt-6">
 					<div className="text-center sm:flex sm:justify-between sm:text-left">
 						<p className="text-sm text-gray-500">
-							<span className="block sm:inline">Created with ❤️ by KKN UNDIP 2023</span>
+							<span className="block sm:inline">Created with ❤️ by KKN TIM I UNDIP 2023</span>
 						</p>
 
 						<p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
