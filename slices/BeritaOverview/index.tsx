@@ -20,7 +20,7 @@ const BeritaOverview = ({
 	console.log(news);
 	const limitedNews = useMemo(() => news.slice(0, 3), [news]);
 	return (
-		<section className="w-full py-14 md:py-20">
+		<section className="w-full py-10 md:py-14">
 			<div className="max-w-7xl container mx-auto">
 				<div className="flex justify-between items-center">
 					<h1 className="text-lg sm:text-xl lg:text-3xl font-semibold">Berita terkini</h1>

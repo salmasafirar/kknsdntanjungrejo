@@ -25,6 +25,7 @@ export type ContextType = {
 		className?: string;
 	};
 	news: {
+		uid: string;
 		data: {
 			title: string;
 			description: string;
