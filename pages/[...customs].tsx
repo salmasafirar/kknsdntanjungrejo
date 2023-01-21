@@ -9,12 +9,16 @@ import { components } from '@slices/index';
 import { isFilled } from '@prismicio/helpers';
 import { isLayoutData, notEmpty } from '@core/utils/check';
 
-const CustomPage = ({ content, layout_content }: PageProps): JSX.Element => {
+type Props = PageProps & {
+	context: any;
+};
+
+const CustomPage = ({ content, layout_content, context }: Props): JSX.Element => {
 	const router = useRouter();
 
 	return (
 		<DynamicLayout content={layout_content} title={content.htmlTitle} key={router.asPath}>
-			<SliceZone slices={content.slices} components={components} />
+			<SliceZone slices={content.slices} components={components} context={context} />
 		</DynamicLayout>
 	);
 };
@@ -31,6 +35,22 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({
 		const PageDoc = await queryByRoute(client, route);
 		const content = PageDoc.data;
 
+		const newsPromises = client
+			.getAllByType('berita', {
+				orderings: '[my.berita.date desc]'
+			})
+			.then((res) => res);
+
+		const agendaPromises = client.getAllByType('agenda').then((res) => res);
+
+		const galleryPromises = client.getAllByType('gallery').then((res) => res);
+
+		const [news, agenda, gallery] = await Promise.all([
+			newsPromises,
+			agendaPromises,
+			galleryPromises
+		]);
+
 		if (!isFilled.contentRelationship(content.layout) || !isLayoutData(content.layout.data))
 			throw new Error('Mising layout');
 
@@ -39,7 +59,15 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({
 		if (previewData) layout_content.isPreview = true;
 
 		return {
-			props: { content, layout_content }
+			props: {
+				content,
+				layout_content,
+				context: {
+					news,
+					agenda,
+					gallery
+				}
+			}
 		};
 	} catch (error) {
 		console.log(error);
@@ -71,4 +99,3 @@ export const getStaticPaths: GetStaticPaths<PageParams> = async () => {
 };
 
 export default CustomPage;
-

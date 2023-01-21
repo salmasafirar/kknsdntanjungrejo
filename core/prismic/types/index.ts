@@ -24,4 +24,12 @@ export type ContextType = {
 		style?: React.CSSProperties;
 		className?: string;
 	};
+	news: {
+		data: {
+			title: string;
+			description: string;
+			image: string;
+			date: string;
+		};
+	}[];
 };

@@ -1,20 +1,30 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import { LayoutContentType, PageProps, queryByRoute, queryByUID } from '@core/prismic/client';
+import {
+	LayoutContentType,
+	PageProps,
+	queryByRoute,
+	queryByUID,
+	queryLayout
+} from '@core/prismic/client';
 import { createClient } from '@core/prismic/client';
 import DynamicLayout from '@components/_layouts/DynamicLayout';
-import { SliceZone } from '@prismicio/react';
+import { PrismicRichText, SliceZone } from '@prismicio/react';
 import { components } from '@slices/index';
-import { isFilled } from '@prismicio/helpers';
+import { asText, isFilled } from '@prismicio/helpers';
 import { isLayoutData, notEmpty } from '@core/utils/check';
 
 const CustomPage = ({ content, layout_content }: any): JSX.Element => {
 	const router = useRouter();
 
+	const title = asText(content.title);
+
 	return (
-		<DynamicLayout content={layout_content} title={content.title} key={router.asPath}>
-			{content.title}
+		<DynamicLayout content={layout_content} title={title} key={router.asPath}>
+			<div className="pt-36">
+				<PrismicRichText field={content.title} />
+			</div>
 			{/* <SliceZone slices={content.slices} components={components} /> */}
 		</DynamicLayout>
 	);
@@ -28,17 +38,16 @@ export const getStaticProps = async ({ params, previewData }: any) => {
 		const PageDoc = await queryByUID(client, 'berita', slug);
 		const content = PageDoc.data;
 
-		if (!isFilled.contentRelationship(content.layout) || !isLayoutData(content.layout.data))
-			throw new Error('Mising layout');
+		console.log(content);
 
-		const layout_content: LayoutContentType = content.layout.data;
+		const layoutId = content.layout.uid;
 
-		if (previewData) layout_content.isPreview = true;
+		const layoutDoc = await queryLayout(client, layoutId);
 
 		return {
 			props: {
 				content,
-				layout_content
+				layout_content: layoutDoc
 			}
 		};
 	} catch (error) {
