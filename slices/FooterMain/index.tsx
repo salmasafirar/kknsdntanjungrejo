@@ -4,6 +4,7 @@ import { FooterMainSlice } from '@slicemachine/prismicio';
 import { ContextType } from '@core/prismic/types';
 import { isFilled } from '@prismicio/helpers';
 import * as PrismicT from '@prismicio/types';
+import Link from '@components/_shared/Link';
 
 const FooterMain = ({
 	slice,
@@ -202,9 +203,9 @@ const FooterMain = ({
 							<nav aria-label="Footer About Nav" className="mt-8">
 								<ul className="space-y-4 text-sm">
 									<li>
-										<a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+										<Link className="text-gray-700 transition hover:text-gray-700/75" href="/">
 											Company History
-										</a>
+										</Link>
 									</li>
 
 									<li>
