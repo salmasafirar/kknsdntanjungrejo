@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import { BeritaOverviewSlice } from '@slicemachine/prismicio';
 import { ContextType } from '@core/prismic/types';
 import Link from '@components/_shared/Link';
 import Image from 'next/image';
+import { isFilled } from '@prismicio/helpers';
 
 /**
  * @typedef {import("@prismicio/client").Content.BeritaOverviewSlice} BeritaOverviewSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<BeritaOverviewSlice>} BeritaOverviewProps
  * @param { BeritaOverviewProps }
  */
-const BeritaOverview = ({ slice }: SliceComponentProps<BeritaOverviewSlice, ContextType>) => {
-	console.log('test');
+const BeritaOverview = ({
+	slice,
+	context
+}: SliceComponentProps<BeritaOverviewSlice, ContextType>) => {
+	const { news } = context;
+
+	console.log(news);
+	const limitedNews = useMemo(() => news.slice(0, 3), [news]);
 	return (
 		<section className="w-full py-14 md:py-20">
 			<div className="max-w-7xl container mx-auto">
@@ -22,25 +29,29 @@ const BeritaOverview = ({ slice }: SliceComponentProps<BeritaOverviewSlice, Cont
 					</Link>
 				</div>
 				<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-					<NewsCard />
-					<NewsCard />
-					<NewsCard />
+					{limitedNews.map((item, index) => {
+						const data = item.data;
+						return <NewsCard key={index} data={data} />;
+					})}
 				</div>
 			</div>
 		</section>
 	);
 };
 
-const NewsCard = () => {
+const NewsCard = ({ data }: any) => {
 	return (
 		<div className="bg-white shadow-sm group/card cursor-pointer overflow-hidden duration-300">
 			<div className="w-full h-[200px] md:h-[240px] lg:h-[280px] relative duration-300 overflow-hidden">
-				<Image
-					src="https://images.prismic.io/sdntanjungrejo01/5bb94208-317f-4194-8952-69f7f100d30b_20230118_111933%281%29.jpg?auto=compress,format&w=900"
-					layout="fill"
-					objectFit="cover"
-					className="group-hover/card:scale-110 duration-300 brightness-90 group-hover/card:brightness-100"
-				/>
+				{data.image && (
+					<Image
+						src={data.image.url}
+						layout="fill"
+						objectFit="cover"
+						className="group-hover/card:scale-110 duration-300 brightness-90 group-hover/card:brightness-100"
+					/>
+				)}
+
 				<div className="absolute top-0 right-0 md:m-2 p-1 z-10 bg-green-500 flex items-center space-x-1">
 					<svg
 						aria-hidden="true"
@@ -57,19 +68,18 @@ const NewsCard = () => {
 							strokeLinejoin="round"
 						/>
 					</svg>
-					<p className="text-xs font-medium text-white">1 September 2021</p>
+					<p className="text-xs font-medium text-white">{data.date}</p>
 				</div>
 			</div>
 			<div className="px-2 md:px-4 py-4 md:py-5 duration-300">
 				<div className="relative">
-					<h1 className="text-xl -sm:text-lg font-semibold w-full line-clamp-2 group-hover/card:text-green-500">
-						Lorem ipsum dolor sit amet dolor sit amet Lorem ipsum
-					</h1>
+					<div className="text-xl -sm:text-lg font-semibold w-full line-clamp-2 group-hover/card:text-green-500">
+						<PrismicRichText field={data.title} />
+					</div>
 				</div>
-				<p className="text-gray-500 mt-4 line-clamp-2 text-sm">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. dolor sit amet
-					consectetur adipisicing elit
-				</p>
+				<div className="text-gray-500 mt-4 line-clamp-2 text-sm">
+					<PrismicRichText field={data.description} />
+				</div>
 			</div>
 		</div>
 	);

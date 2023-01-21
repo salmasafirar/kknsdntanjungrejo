@@ -16,13 +16,33 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({ pr
 		const PageDoc = await queryByRoute(client, '/');
 		const content = PageDoc.data;
 
+		const newsPromises = client.getAllByType('berita').then((res) => res);
+
+		const agendaPromises = client.getAllByType('agenda').then((res) => res);
+
+		const galleryPromises = client.getAllByType('gallery').then((res) => res);
+
+		const [news, agenda, gallery] = await Promise.all([
+			newsPromises,
+			agendaPromises,
+			galleryPromises
+		]);
+
 		if (!isFilled.contentRelationship(content.layout) || !isLayoutData(content.layout.data))
 			throw new Error('Mising layout');
 		const layout_content: LayoutContentType = content.layout.data;
 
 		if (previewData) layout_content.isPreview = true;
 		return {
-			props: { content, layout_content }
+			props: {
+				content,
+				layout_content,
+				context: {
+					news,
+					agenda,
+					gallery
+				}
+			}
 		};
 	} catch (err) {
 		return {
@@ -32,4 +52,3 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({ pr
 };
 
 export default CustomPage;
-
