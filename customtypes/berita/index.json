@@ -12,6 +12,16 @@
           "placeholder": "id berita yang tampil di url"
         }
       },
+      "layout": {
+        "type": "Link",
+        "config": {
+          "label": "Layout",
+          "select": "document",
+          "customtypes": [
+            "layouts"
+          ]
+        }
+      },
       "title": {
         "type": "StructuredText",
         "config": {

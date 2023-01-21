@@ -70,6 +70,17 @@ export type AgendaDocument<Lang extends string = string> = prismicT.PrismicDocum
 /** Content for Berita documents */
 interface BeritaDocumentData {
 	/**
+	 * Layout field in *Berita*
+	 *
+	 * - **Field Type**: Content Relationship
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: berita.layout
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	layout: prismicT.RelationField<'layouts'>;
+	/**
 	 * Title field in *Berita*
 	 *
 	 * - **Field Type**: Rich Text
