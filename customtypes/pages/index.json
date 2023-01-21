@@ -52,6 +52,9 @@
             },
             "berita_overview": {
               "type": "SharedSlice"
+            },
+            "tentang": {
+              "type": "SharedSlice"
             }
           }
         }
