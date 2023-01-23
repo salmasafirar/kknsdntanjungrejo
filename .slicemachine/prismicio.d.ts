@@ -722,11 +722,70 @@ type TentangSliceVariation = TentangSliceDefault;
  *
  */
 export type TentangSlice = prismicT.SharedSlice<"tentang", TentangSliceVariation>;
+/**
+ * Primary content in TopBanner → Primary
+ *
+ */
+interface TopBannerSliceDefaultPrimary {
+    /**
+     * email field in *TopBanner → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Email sekolah
+     * - **API ID Path**: top_banner.primary.email
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    email: prismicT.KeyTextField;
+    /**
+     * phone field in *TopBanner → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Nomor handphone sekolah
+     * - **API ID Path**: top_banner.primary.phone
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    phone: prismicT.KeyTextField;
+    /**
+     * text field in *TopBanner → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: tulisan yang tampil
+     * - **API ID Path**: top_banner.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text: prismicT.KeyTextField;
+}
+/**
+ * Default variation for TopBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TopBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TopBannerSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TopBannerSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *TopBanner*
+ *
+ */
+type TopBannerSliceVariation = TopBannerSliceDefault;
+/**
+ * TopBanner Shared Slice
+ *
+ * - **API ID**: `top_banner`
+ * - **Description**: `TopBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TopBannerSlice = prismicT.SharedSlice<"top_banner", TopBannerSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TopBannerSliceDefaultPrimary, TopBannerSliceDefault, TopBannerSliceVariation, TopBannerSlice };
     }
 }

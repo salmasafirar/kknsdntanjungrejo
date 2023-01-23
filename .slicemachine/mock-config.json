@@ -84,6 +84,11 @@
           }
         }
       }
+    },
+    "TopBanner": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

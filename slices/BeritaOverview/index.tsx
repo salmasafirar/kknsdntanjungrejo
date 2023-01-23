@@ -77,7 +77,7 @@ const NewsCard = ({ data, uid }: any) => {
 							<PrismicRichText field={data.title} />
 						</div>
 					</div>
-					<div className="text-gray-500 mt-2 md:mt-4 line-clamp-2 text-sm">
+					<div className="text-gray-500 mt-2 md:mt-3 line-clamp-2 text-sm">
 						<PrismicRichText field={data.description} />
 					</div>
 				</div>

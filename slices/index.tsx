@@ -8,6 +8,7 @@ import Image from './Image';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
 import Tentang from './Tentang';
+import TopBanner from './TopBanner';
 
 export {
 	Banner,
@@ -18,6 +19,7 @@ export {
 	NavbarMain,
 	Paragraph,
 	Tentang,
+	TopBanner
 };
 
 export const components = {
@@ -29,4 +31,6 @@ export const components = {
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,
+	top_banner: TopBanner
 };
+

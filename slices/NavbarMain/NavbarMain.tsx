@@ -33,6 +33,11 @@ const NavbarMain = ({
 	});
 	const [isScrolled, setIsScrolled] = React.useState(false);
 
+	const isActive = (route: string) => {
+		if (route === '/') return asPath === route;
+		return asPath.includes(route);
+	};
+
 	React.useEffect(() => {
 		const handleScroll = () => {
 			const offset = window.scrollY;
@@ -117,7 +122,7 @@ const NavbarMain = ({
 												<div
 													className={[
 														['transition hover:text-green-500 py-8'],
-														asPath === item.route ? ['text-green-500'] : ['text-gray-800']
+														isActive(item.route) ? ['text-green-500'] : ['text-gray-800']
 													].join(' ')}
 												>
 													{item.text}

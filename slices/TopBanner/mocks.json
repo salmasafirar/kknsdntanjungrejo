@@ -1,0 +1,29 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "contrast",
+        "type": "Text"
+      },
+      "phone": {
+        "__TYPE__": "FieldContent",
+        "value": "chamber",
+        "type": "Text"
+      },
+      "text": {
+        "__TYPE__": "FieldContent",
+        "value": "think",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

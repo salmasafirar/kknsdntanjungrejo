@@ -64,7 +64,7 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 												<p className="text-xs text-green-500">
 													{formatDate(new Date(date), 'dd MMMM yyyy')}
 												</p>
-												<h3 className="mt-2">{asText(title)}</h3>
+												<h3 className="mt-2 font-medium">{asText(title)}</h3>
 												<p className="text-xs mt-1 line-clamp-1 text-gray-600">
 													{asText(description)}
 												</p>
