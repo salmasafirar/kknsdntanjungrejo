@@ -71,13 +71,13 @@ const NewsCard = ({ data, uid }: any) => {
 						<p className="text-xs font-medium text-white">{data.date}</p>
 					</div>
 				</div>
-				<div className="px-2 md:px-4 py-4 md:py-5 duration-300">
+				<div className="px-3 md:px-4 py-4 md:py-5 duration-300">
 					<div className="relative">
 						<div className="text-xl -sm:text-lg font-semibold w-full line-clamp-2 group-hover/card:text-green-500">
 							<PrismicRichText field={data.title} />
 						</div>
 					</div>
-					<div className="text-gray-500 mt-4 line-clamp-2 text-sm">
+					<div className="text-gray-500 mt-2 md:mt-4 line-clamp-2 text-sm">
 						<PrismicRichText field={data.description} />
 					</div>
 				</div>

@@ -4,12 +4,7 @@ import { Content } from '@prismicio/client';
 import { ContextType } from '@core/prismic/types';
 
 const Children = ({ context }: SliceComponentProps<Content.ChildrenSlice, ContextType>) => {
-	const {
-		children,
-		minHeight,
-		className = 'w-full overflow-hidden flex-sc col',
-		style
-	} = context.children ?? {};
+	const { children, minHeight, className = 'w-full flex-sc col', style } = context.children ?? {};
 	return (
 		<main style={{ minHeight, ...style }} className={className}>
 			<div className="w-full bg-green-400 py-3">
