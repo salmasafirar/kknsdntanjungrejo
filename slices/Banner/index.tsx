@@ -98,7 +98,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 	}, [reset]);
 
 	return (
-		<section className="relative w-full group">
+		<section className="relative w-full group overflow-hidden">
 			<div className="absolute inset-0 w-full z-20 pt-10 md:pt-24 ">
 				<div className="container max-w-7xl mx-auto h-full flex flex-col justify-center">
 					<div>
