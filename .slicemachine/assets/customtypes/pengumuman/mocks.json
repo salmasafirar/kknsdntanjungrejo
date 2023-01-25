@@ -1,0 +1,18 @@
+{
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "stronger",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Pariatur cupidatat fugiat laboris ea occaecat consequat. Pariatur aliquip duis dolore deserunt esse."
+        }
+      }
+    ]
+  }
+}

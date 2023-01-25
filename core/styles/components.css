@@ -4,6 +4,10 @@
 		@apply flex-cc;
 	}
 
+	.btn-custom {
+		@apply mt-6 md:mt-10 inline-block bg-white px-5 py-3 text-xs sm:text-sm md:text-base font-semibold border-l-4 border-green-400 hover:bg-gray-100;
+	}
+
 	button[data-loading='true'] i.spinner {
 		@apply inline-flex ml-2;
 	}
@@ -45,4 +49,3 @@
 		@apply md:col-span-2;
 	}
 }
-

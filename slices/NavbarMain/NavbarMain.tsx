@@ -41,7 +41,7 @@ const NavbarMain = ({
 	React.useEffect(() => {
 		const handleScroll = () => {
 			const offset = window.scrollY;
-			if (offset > 70) {
+			if (offset > 50) {
 				setIsScrolled(true);
 			} else {
 				setIsScrolled(false);
@@ -118,7 +118,7 @@ const NavbarMain = ({
 								if (isFilled.keyText(item.route))
 									return (
 										<li key={index} onMouseEnter={onHover}>
-											<Link href={item.route}>
+											<Link href={item.route} scroll>
 												<div
 													className={[
 														['transition hover:text-green-500 py-8'],

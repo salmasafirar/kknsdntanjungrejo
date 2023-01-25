@@ -18,7 +18,8 @@
       }
     },
     "gallery": {},
-    "agenda": {}
+    "agenda": {},
+    "pengumuman": {}
   },
   "slices": {
     "Paragraph": {

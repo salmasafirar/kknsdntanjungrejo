@@ -295,6 +295,41 @@ type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangS
  * @typeParam Lang - Language API ID of the document.
  */
 export type PagesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PagesDocumentData>, "pages", Lang>;
+/** Content for Pengumuman documents */
+interface PengumumanDocumentData {
+    /**
+     * Title field in *Pengumuman*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pengumuman.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Description field in *Pengumuman*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: pengumuman.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Pengumuman document from Prismic
+ *
+ * - **API ID**: `pengumuman`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PengumumanDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PengumumanDocumentData>, "pengumuman", Lang>;
 /** Content for Redirect Link documents */
 interface RedirectLinkDocumentData {
     /**
@@ -319,7 +354,7 @@ interface RedirectLinkDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type RedirectLinkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<RedirectLinkDocumentData>, "redirect_link", Lang>;
-export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | RedirectLinkDocument;
+export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | PengumumanDocument | RedirectLinkDocument;
 /**
  * Item in Banner → Items
  *
@@ -390,6 +425,23 @@ type BannerSliceVariation = BannerSliceDefault;
  */
 export type BannerSlice = prismicT.SharedSlice<"banner", BannerSliceVariation>;
 /**
+ * Primary content in BeritaOverview → Primary
+ *
+ */
+interface BeritaOverviewSliceDefaultPrimary {
+    /**
+     * Tampilkan Semua Berita field in *BeritaOverview → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: berita_overview.primary.tampilkanSemua
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    tampilkanSemua: prismicT.BooleanField;
+}
+/**
  * Default variation for BeritaOverview Slice
  *
  * - **API ID**: `default`
@@ -397,7 +449,7 @@ export type BannerSlice = prismicT.SharedSlice<"banner", BannerSliceVariation>;
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type BeritaOverviewSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, never>;
+export type BeritaOverviewSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<BeritaOverviewSliceDefaultPrimary>, never>;
 /**
  * Slice variation for *BeritaOverview*
  *
@@ -722,70 +774,11 @@ type TentangSliceVariation = TentangSliceDefault;
  *
  */
 export type TentangSlice = prismicT.SharedSlice<"tentang", TentangSliceVariation>;
-/**
- * Primary content in TopBanner → Primary
- *
- */
-interface TopBannerSliceDefaultPrimary {
-    /**
-     * email field in *TopBanner → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: Email sekolah
-     * - **API ID Path**: top_banner.primary.email
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    email: prismicT.KeyTextField;
-    /**
-     * phone field in *TopBanner → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: Nomor handphone sekolah
-     * - **API ID Path**: top_banner.primary.phone
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    phone: prismicT.KeyTextField;
-    /**
-     * text field in *TopBanner → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: tulisan yang tampil
-     * - **API ID Path**: top_banner.primary.text
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    text: prismicT.KeyTextField;
-}
-/**
- * Default variation for TopBanner Slice
- *
- * - **API ID**: `default`
- * - **Description**: `TopBanner`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TopBannerSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TopBannerSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *TopBanner*
- *
- */
-type TopBannerSliceVariation = TopBannerSliceDefault;
-/**
- * TopBanner Shared Slice
- *
- * - **API ID**: `top_banner`
- * - **Description**: `TopBanner`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TopBannerSlice = prismicT.SharedSlice<"top_banner", TopBannerSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TopBannerSliceDefaultPrimary, TopBannerSliceDefault, TopBannerSliceVariation, TopBannerSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
     }
 }
