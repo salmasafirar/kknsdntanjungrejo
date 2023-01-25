@@ -9,7 +9,7 @@
 	}
 
 	.btn-primary {
-		@apply cursor-pointer text-sm py-2 w-full bg-green-500 mt-8 text-white active:bg-green-600 hover:bg-green-400 duration-200 flex justify-center shadow-sm rounded-sm;
+		@apply px-4 cursor-pointer text-sm py-2 w-full bg-green-500 mt-8 text-white active:bg-green-600 hover:bg-green-400 duration-200 flex justify-center shadow-sm rounded-sm;
 	}
 
 	button[data-loading='true'] i.spinner {

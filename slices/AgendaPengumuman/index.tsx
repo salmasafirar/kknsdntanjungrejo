@@ -69,25 +69,31 @@ const AgendaPengumuman = ({ slice }: any) => (
 					</div>
 					<div className="mt-6 flex flex-col space-y-5">
 						{/* agenda card */}
+
 						<div className="py-2 px-4 bg-gray-100 border-l-2 border-gray-800">
 							<h4 className="text-base font-medium mb-2">Kerja bakti di halaman sekolah</h4>
-							<p className="text-sm text-gray-500">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium odit quam
-								laudantium.
-							</p>
-						</div>
-						<div className="py-2 px-4 bg-gray-100 border-l-2 border-gray-800">
-							<h4 className="text-base font-medium mb-2">Kerja bakti di halaman sekolah</h4>
-							<p className="text-sm text-gray-500">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium odit quam
-								laudantium.
-							</p>
-						</div>
-						<div className="py-2 px-4 bg-gray-100 border-l-2 border-gray-800">
-							<h4 className="text-base font-medium mb-2">Kerja bakti di halaman sekolah</h4>
-							<p className="text-sm text-gray-500">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium odit quam
-								laudantium.
+							<div className="flex items-center space-x-1 mb-2">
+								<svg
+									aria-hidden="true"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth={1.5}
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+									className="w-4 h-4 text-gray-800"
+								>
+									<path
+										d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
+								</svg>
+								<p className="text-xs text-gray-800">12 Desember 2022</p>
+							</div>
+							<p className="text-sm text-gray-500 line-clamp-2">
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa optio dolores
+								inventore commodi odit, porro qui saepe nisi minus quia corrupti praesentium nihil
+								consequuntur? Laboriosam nisi quo iure voluptate ut.
 							</p>
 						</div>
 					</div>
