@@ -11,9 +11,9 @@ import { format } from 'date-fns';
 const AgendaPengumuman = ({ slice, context }: any) => {
 	const { pengumuman = [], agenda = [] } = context;
 
-	const agendaList = useMemo(() => agenda.slice(0, 3), [agenda]);
+	const agendaList = useMemo(() => agenda.slice(0, 3) || [], [agenda]);
 
-	const pengumumanList = useMemo(() => pengumuman.slice(0, 3), [pengumuman]);
+	const pengumumanList = useMemo(() => pengumuman.slice(0, 3) || [], [pengumuman]);
 
 	return (
 		<section
@@ -22,10 +22,11 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 				backgroundImage:
 					'url(https://images.prismic.io/sdntanjungrejo01/14cc99b7-eec8-40cd-a909-cb17fc66dfc3_20230118_112035.jpg?auto=compress,format)',
 				backgroundSize: 'cover',
-				backgroundPosition: 'center'
+				backgroundPosition: 'center',
+				backgroundAttachment: 'fixed'
 			}}
 		>
-			<div className="max-w-7xl container bg-white py-8 shadow-xl">
+			<div className="sm:max-w-7xl -sm:mx-4 -sm:px-4 -sm:py-3 sm:container bg-white py-8 shadow-xl">
 				<h1 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800 w-max">
 					Agenda & Pengumuman
 				</h1>
@@ -47,15 +48,17 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 									strokeLinejoin="round"
 								/>
 							</svg>
-							<h2 className="font-semibold text-lg">Agenda</h2>
+							<h2 className="font-semibold text-base md:text-lg">Agenda</h2>
 						</div>
 						<div className="mt-6 flex flex-col space-y-5">
 							{/* agenda card */}
-							{agendaList.map((item: any) => (
-								<AgendaCard key={item.id} data={item} />
-							))}
+							{agendaList.length > 0 &&
+								agendaList.map((item: any) => <AgendaCard key={item.id} data={item} />)}
+							{!agendaList.length && (
+								<div className="text-center text-gray-500 py-6">Tidak ada agenda terkini</div>
+							)}
 						</div>
-						<div className="btn-primary w-max px-4 ml-auto">Lihat semua</div>
+						<div className="btn-primary w-max px-4 ml-auto -sm:w-full">Lihat semua</div>
 					</div>
 					<div className="md:pl-10 -md:pt-10">
 						<div className="flex items-center gap-2">
@@ -74,15 +77,17 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 									strokeLinejoin="round"
 								/>
 							</svg>
-							<h2 className="font-semibold text-lg">Pengumuman</h2>
+							<h2 className="font-semibold text-base md:text-lg">Pengumuman</h2>
 						</div>
 						<div className="mt-6 flex flex-col space-y-5">
 							{/* pengumuman card */}
-							{pengumumanList.map((item: any) => (
-								<PengumumanCard key={item.id} data={item} />
-							))}
+							{pengumumanList.length > 0 &&
+								pengumumanList.map((item: any) => <PengumumanCard key={item.id} data={item} />)}
+							{!pengumumanList.length && (
+								<div className="text-center text-gray-500 py-6">Tidak ada pengumuman terkini</div>
+							)}
 						</div>
-						<div className="btn-primary w-max px-4 ml-auto">Lihat semua</div>
+						<div className="btn-primary w-max px-4 ml-auto -sm:w-full">Lihat semua</div>
 					</div>
 				</div>
 			</div>
@@ -100,14 +105,14 @@ const AgendaCard = ({ data }: any) => {
 	const day = format(dateObj, 'd');
 
 	return (
-		<div className="flex items-center space-x-6">
-			<div className="w-16 h-16 flex flex-col items-center justify-center bg-white shadow-md border-t-4 border-red-500 rounded-md">
-				<div className="text-base font-semibold">{day}</div>
-				<div className="text-sm">{month}</div>
+		<div className="flex items-center space-x-4 md:space-x-6">
+			<div className="w-12 h-12 md:w-16 md:h-16 flex flex-col items-center justify-center bg-white shadow-md border-t-4 border-red-500 rounded-md">
+				<div className="text-sm md:text-base font-semibold">{day}</div>
+				<div className="text-xs md:text-sm">{month}</div>
 			</div>
 			<div>
-				<h4 className="text-base font-medium mb-2">{title}</h4>
-				<div className="flex items-center space-x-4">
+				<h4 className="text-sm md:text-base font-medium mb-2">{title}</h4>
+				<div className="flex items-center space-x-2 md:space-x-4">
 					<div className="flex items-center space-x-2 text-gray-500">
 						<svg
 							aria-hidden="true"
@@ -129,7 +134,7 @@ const AgendaCard = ({ data }: any) => {
 								strokeLinejoin="round"
 							/>
 						</svg>
-						<p className="text-sm ">{tempat}</p>
+						<p className="text-xs md:text-sm">{tempat}</p>
 					</div>
 					<div className="flex items-center space-x-2 text-gray-500">
 						<svg
@@ -147,7 +152,7 @@ const AgendaCard = ({ data }: any) => {
 								strokeLinejoin="round"
 							/>
 						</svg>
-						<p className="text-sm ">{waktu}</p>
+						<p className="text-xs md:text-sm ">{waktu}</p>
 					</div>
 				</div>
 			</div>
@@ -183,7 +188,7 @@ const PengumumanCard = ({ data }: any) => {
 				</svg>
 				<p className="text-xs text-gray-800">{formattedDate}</p>
 			</div>
-			<div className="text-sm text-gray-500 line-clamp-2">
+			<div className="text-xs md:text-sm text-gray-500 line-clamp-2">
 				<PrismicRichText field={description} />
 			</div>
 		</div>
