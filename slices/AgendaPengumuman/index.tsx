@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { PrismicRichText } from '@prismicio/react';
-import { asText } from '@prismicio/helpers';
 import { format } from 'date-fns';
 
 /**
@@ -8,8 +7,30 @@ import { format } from 'date-fns';
  * @typedef {import("@prismicio/react").SliceComponentProps<AgendaPengumumanSlice>} AgendaPengumumanProps
  * @param { AgendaPengumumanProps }
  */
+
+const useScrollPosition = () => {
+	const [scrollPosition, setScrollPosition] = React.useState(0);
+
+	const handleScroll = () => {
+		const position = window.pageYOffset;
+		setScrollPosition(position);
+	};
+
+	React.useEffect(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
+	return scrollPosition;
+};
+
 const AgendaPengumuman = ({ slice, context }: any) => {
 	const { pengumuman = [], agenda = [] } = context;
+
+	const scrollPosition = useScrollPosition();
 
 	const agendaList = useMemo(() => agenda.slice(0, 3) || [], [agenda]);
 
@@ -23,7 +44,8 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 					'url(https://images.prismic.io/sdntanjungrejo01/14cc99b7-eec8-40cd-a909-cb17fc66dfc3_20230118_112035.jpg?auto=compress,format)',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
-				backgroundAttachment: 'fixed'
+				// backgroundAttachment: 'fixed',
+				backgroundPositionY: (scrollPosition * 2.5) / 8
 			}}
 		>
 			<div className="sm:max-w-7xl -sm:mx-4 -sm:px-4 -sm:py-3 sm:container bg-white py-8 shadow-xl">
