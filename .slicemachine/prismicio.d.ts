@@ -42,16 +42,16 @@ interface AgendaDocumentData {
      */
     tempat: prismicT.KeyTextField;
     /**
-     * Tanggal field in *Agenda*
+     * date field in *Agenda*
      *
      * - **Field Type**: Date
-     * - **Placeholder**: *None*
-     * - **API ID Path**: agenda.tanggal
+     * - **Placeholder**: Tanggal
+     * - **API ID Path**: agenda.date
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/date
      *
      */
-    tanggal: prismicT.DateField;
+    date: prismicT.DateField;
 }
 /**
  * Agenda document from Prismic
@@ -284,7 +284,7 @@ interface PagesDocumentData {
  * Slice for *Pages → Slice Zone*
  *
  */
-type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice;
+type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice;
 /**
  * Pages document from Prismic
  *
@@ -319,6 +319,17 @@ interface PengumumanDocumentData {
      *
      */
     description: prismicT.RichTextField;
+    /**
+     * Date field in *Pengumuman*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: Tanggal pengumuman dibuat
+     * - **API ID Path**: pengumuman.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
 }
 /**
  * Pengumuman document from Prismic
@@ -355,6 +366,29 @@ interface RedirectLinkDocumentData {
  */
 export type RedirectLinkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<RedirectLinkDocumentData>, "redirect_link", Lang>;
 export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | PengumumanDocument | RedirectLinkDocument;
+/**
+ * Default variation for AgendaPengumuman Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `AgendaPengumuman`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AgendaPengumumanSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, never>;
+/**
+ * Slice variation for *AgendaPengumuman*
+ *
+ */
+type AgendaPengumumanSliceVariation = AgendaPengumumanSliceDefault;
+/**
+ * AgendaPengumuman Shared Slice
+ *
+ * - **API ID**: `agenda_pengumuman`
+ * - **Description**: `AgendaPengumuman`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AgendaPengumumanSlice = prismicT.SharedSlice<"agenda_pengumuman", AgendaPengumumanSliceVariation>;
 /**
  * Item in Banner → Items
  *
@@ -779,6 +813,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice };
     }
 }

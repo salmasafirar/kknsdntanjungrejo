@@ -90,6 +90,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "AgendaPengumuman": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

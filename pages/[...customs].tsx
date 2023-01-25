@@ -44,14 +44,38 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({
 			})
 			.then((res) => res);
 
-		const agendaPromises = client.getAllByType('agenda').then((res) => res);
+		const agendaPromises = client
+			.getAllByType('agenda', {
+				orderings: {
+					field: 'my.agenda.date',
+					direction: 'desc'
+				}
+			})
+			.then((res) => res);
 
-		const galleryPromises = client.getAllByType('gallery').then((res) => res);
+		const pengumumanPromises = client
+			.getAllByType('pengumuman', {
+				orderings: {
+					field: 'my.pengumuman.date',
+					direction: 'desc'
+				}
+			})
+			.then((res) => res);
 
-		const [news, agenda, gallery] = await Promise.all([
+		const galleryPromises = client
+			.getAllByType('gallery', {
+				orderings: {
+					field: 'my.gallery.date',
+					direction: 'desc'
+				}
+			})
+			.then((res) => res);
+
+		const [news, agenda, gallery, pengumuman] = await Promise.all([
 			newsPromises,
 			agendaPromises,
-			galleryPromises
+			galleryPromises,
+			pengumumanPromises
 		]);
 
 		if (!isFilled.contentRelationship(content.layout) || !isLayoutData(content.layout.data))
@@ -68,7 +92,8 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({
 				context: {
 					news,
 					agenda,
-					gallery
+					gallery,
+					pengumuman
 				}
 			}
 		};

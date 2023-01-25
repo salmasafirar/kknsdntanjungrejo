@@ -24,16 +24,14 @@ const BeritaOverview = ({
 
 	const limitedNews = useMemo(() => news.slice(0, 3), [news]);
 
-	const nn = [...news, ...news, ...news, ...news, ...news, ...news];
-
 	const paginatedNews = useMemo(() => {
 		if (page) {
 			const pageInt = parseInt(page as string);
 			const start = (pageInt - 1) * 6;
 			const end = start + 6;
-			return nn.slice(start, end);
+			return news.slice(start, end);
 		}
-		return nn.slice(0, 6);
+		return news.slice(0, 6);
 	}, [news, page]);
 
 	const newsList = tampilkanSemua ? paginatedNews : limitedNews;
@@ -42,7 +40,9 @@ const BeritaOverview = ({
 		<section className="w-full py-10 md:py-14">
 			<div className="max-w-7xl container mx-auto">
 				<div className="flex justify-between items-center">
-					<h1 className="text-xl sm:text-xl lg:text-3xl font-semibold">Berita terkini</h1>
+					<h1 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800">
+						Berita terkini
+					</h1>
 					{!tampilkanSemua && (
 						<Link href="/berita" className="-sm:text-sm text-green-500">
 							Lihat semua
@@ -57,7 +57,7 @@ const BeritaOverview = ({
 				</div>
 				{tampilkanSemua && (
 					<div className="mt-10">
-						<Pagination totalPageCount={nn.length / 6} />
+						<Pagination totalPageCount={news.length / 6} />
 					</div>
 				)}
 			</div>

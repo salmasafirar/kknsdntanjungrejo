@@ -1,16 +1,16 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "feet"
+    "value": "part"
   },
   "htmlTitle": {
     "__TYPE__": "FieldContent",
-    "value": "any",
+    "value": "drove",
     "type": "Text"
   },
   "route": {
     "__TYPE__": "FieldContent",
-    "value": "supply",
+    "value": "nobody",
     "type": "Text"
   },
   "layout": {
@@ -24,7 +24,7 @@
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "banner$cc6bbd79-ae4b-44f2-94c0-ea72e520ae0c",
+        "key": "banner$cd98b37f-bb3b-440f-b69f-3cba86f9d740",
         "name": "banner",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -40,13 +40,13 @@
                     "__TYPE__": "ImageContent",
                     "origin": {
                       "id": "main",
-                      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
-                      "width": 5848,
-                      "height": 3899
+                      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+                      "width": 4000,
+                      "height": 6000
                     },
-                    "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
-                    "width": 5848,
-                    "height": 3899,
+                    "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+                    "width": 4000,
+                    "height": 6000,
                     "edit": {
                       "zoom": 1,
                       "crop": {
@@ -66,7 +66,7 @@
                       {
                         "type": "paragraph",
                         "content": {
-                          "text": "Elit id irure consectetur enim proident dolore ea fugiat reprehenderit ipsum et. Exercitation ullamco in id ea Lorem velit incididunt pariatur occaecat aliqua consectetur nisi in. Aliquip amet deserunt nostrud proident ea incididunt culpa deserunt consectetur minim excepteur deserunt."
+                          "text": "Consequat officia qui eu elit proident sit deserunt. Amet cupidatat et sit pariatur reprehenderit et consectetur eiusmod minim ipsum aliquip ullamco reprehenderit."
                         }
                       }
                     ]
@@ -76,7 +76,7 @@
                   "button",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "dinner",
+                    "value": "student",
                     "type": "Text"
                   }
                 ],
@@ -84,7 +84,7 @@
                   "href",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "east",
+                    "value": "dry",
                     "type": "Text"
                   }
                 ]
@@ -94,12 +94,17 @@
         }
       },
       {
-        "key": "berita_overview$8b21ac48-7f71-4ea5-ae8b-048b92cd06e5",
+        "key": "berita_overview$44220bf4-b654-4752-a1dd-655d9b62c158",
         "name": "berita_overview",
         "widget": {
           "__TYPE__": "SharedSliceContent",
           "variation": "default",
-          "primary": {},
+          "primary": {
+            "tampilkanSemua": {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          },
           "items": [
             {
               "__TYPE__": "GroupItemContent",
@@ -109,7 +114,7 @@
         }
       },
       {
-        "key": "tentang$ea9b17a3-5805-48f8-95ba-7ab5c24d937c",
+        "key": "tentang$2c9600db-5c03-4997-a89c-5c010805dec7",
         "name": "tentang",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -121,7 +126,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Velit sit officia consequat elit sunt reprehenderit do anim pariatur exercitation esse."
+                    "text": "Fugiat ea qui ad commodo in laboris esse ex veniam cupidatat consequat qui fugiat ullamco amet."
                   }
                 }
               ]
@@ -132,7 +137,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Irure mollit esse occaecat veniam non dolore voluptate cupidatat qui proident laboris incididunt. Nostrud aliquip culpa laborum nulla ut elit enim nostrud Lorem consequat. Et labore esse ex quis do officia voluptate non minim eiusmod id."
+                    "text": "Dolor aliquip labore incididunt fugiat consequat cillum cupidatat non minim elit reprehenderit consectetur esse sit. Reprehenderit enim commodo qui est eiusmod ipsum culpa sit incididunt elit. Ex dolore eu tempor ut voluptate eiusmod fugiat elit nisi sit elit."
                   }
                 }
               ]
@@ -141,13 +146,13 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
-                "width": 3212,
-                "height": 3880
+                "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+                "width": 2747,
+                "height": 4120
               },
-              "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
-              "width": 3212,
-              "height": 3880,
+              "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+              "width": 2747,
+              "height": 4120,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -159,6 +164,21 @@
               "thumbnails": {}
             }
           },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "agenda_pengumuman$b3f4b59e-f2f5-4b11-bf9e-4863b72cc471",
+        "name": "agenda_pengumuman",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {},
           "items": [
             {
               "__TYPE__": "GroupItemContent",

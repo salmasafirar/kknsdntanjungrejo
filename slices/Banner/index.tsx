@@ -21,7 +21,10 @@ type BannerSliceType = PrismicT.Slice<'Banner', Record<any, any>, Item>;
 const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) => {
 	const [emblaRef, emblaApi] = useEmblaCarousel({
 		loop: true,
-		speed: 5
+		speed: 10,
+		breakpoints: {
+			'(min-width: 768px)': { speed: 5 }
+		}
 	});
 	const total = slice.items.length;
 	const [step, setStep] = React.useState(0);

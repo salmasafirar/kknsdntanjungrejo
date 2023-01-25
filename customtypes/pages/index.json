@@ -49,6 +49,9 @@
             },
             "tentang": {
               "type": "SharedSlice"
+            },
+            "agenda_pengumuman": {
+              "type": "SharedSlice"
             }
           }
         }

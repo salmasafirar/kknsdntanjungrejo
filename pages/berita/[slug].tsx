@@ -21,9 +21,11 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 
 	const { news } = context;
 
+	const limitNews = news.slice(0, 5);
+
 	return (
 		<DynamicLayout content={layout_content} title={title} key={router.asPath}>
-			<section className="container max-w-7xl mx-auto pt-28 md:pt-32 lg:pt-36 grid grid-cols-1 md:grid-cols-10 md:gap-4">
+			<section className="container max-w-7xl mx-auto pt-10 md:pt-16 grid grid-cols-1 md:grid-cols-10 md:gap-4">
 				<div className="md:col-span-7">
 					<div className="w-full mx-auto mb-8 md:mb-10">
 						<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{title}</h1>
@@ -50,29 +52,45 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 				</div>
 				<div className="md:col-span-3 md:pl-8 -md:pt-4">
 					<div className="sticky top-28 right-0 pb-10 md:pb-20">
-						<h1 className="text-xl pl-3 border-l-4 border-green-500 font-medium">Berita Lainnya</h1>
+						<h1 className="text-lg pl-3 border-l-4 border-green-500 font-medium">Berita Lainnya</h1>
 						<div className="mt-6">
-							{news &&
-								news.map((item: any) => {
-									const { title = '', description = '', date = '' } = item.data;
+							{limitNews &&
+								limitNews.map((item: any) => {
+									const { title = '', description = '', date = '', image } = item.data;
 									return (
 										<Link href={`/berita/${item.uid}`} key={item.uid}>
-											<div
-												key={item.uid}
-												className="py-3 px-4 shadow-sm bg-white mb-3 cursor-pointer hover:bg-gray-50"
-											>
-												<p className="text-xs text-green-500">
-													{formatDate(new Date(date), 'dd MMMM yyyy')}
-												</p>
-												<h3 className="mt-2 font-medium">{asText(title)}</h3>
-												<p className="text-xs mt-1 line-clamp-1 text-gray-600">
-													{asText(description)}
-												</p>
+											<div className="flex items-center bg-white shadow-sm px-2 py-1.5">
+												<div className="w-1/4 h-[80px] relative bg-gray-300">
+													{image && (
+														<Image
+															src={image.url}
+															alt={image.alt || 'cover'}
+															layout="fill"
+															objectFit="cover"
+														/>
+													)}
+												</div>
+
+												<div
+													key={item.uid}
+													className="w-3/4 px-3 bg-white mb-3 cursor-pointer hover:bg-gray-50"
+												>
+													<p className="text-xs text-green-500">
+														{formatDate(new Date(date), 'dd MMMM yyyy')}
+													</p>
+													<h3 className="mt-1 font-medium">{asText(title)}</h3>
+													<p className="text-xs mt-1 line-clamp-1 text-gray-600">
+														{asText(description)}
+													</p>
+												</div>
 											</div>
 										</Link>
 									);
 								})}
 						</div>
+						<Link href="/berita">
+							<div className="btn-primary mt-8">Lihat semua berita</div>
+						</Link>
 					</div>
 				</div>
 			</section>

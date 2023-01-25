@@ -1,7 +1,7 @@
 {
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "stronger",
+    "value": "research",
     "type": "Text"
   },
   "description": {
@@ -10,9 +10,14 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Pariatur cupidatat fugiat laboris ea occaecat consequat. Pariatur aliquip duis dolore deserunt esse."
+          "text": "Consequat nisi reprehenderit aliquip sint incididunt id officia occaecat enim amet adipisicing sint est minim. Ullamco consequat occaecat aliquip irure eiusmod."
         }
       }
     ]
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2019-02-02"
   }
 }
