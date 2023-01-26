@@ -1,22 +1,22 @@
 {
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "cloud",
+    "value": "poor",
     "type": "Text"
   },
   "waktu": {
     "__TYPE__": "FieldContent",
-    "value": "element",
+    "value": "tried",
     "type": "Text"
   },
   "tempat": {
     "__TYPE__": "FieldContent",
-    "value": "colony",
+    "value": "knowledge",
     "type": "Text"
   },
-  "tanggal": {
+  "date": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2017-01-30"
+    "value": "2012-10-22"
   }
 }

@@ -21,7 +21,10 @@ type BannerSliceType = PrismicT.Slice<'Banner', Record<any, any>, Item>;
 const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) => {
 	const [emblaRef, emblaApi] = useEmblaCarousel({
 		loop: true,
-		speed: 5
+		speed: 10,
+		breakpoints: {
+			'(min-width: 768px)': { speed: 5 }
+		}
 	});
 	const total = slice.items.length;
 	const [step, setStep] = React.useState(0);
@@ -98,7 +101,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 	}, [reset]);
 
 	return (
-		<section className="relative w-full group">
+		<section className="relative w-full group overflow-hidden">
 			<div className="absolute inset-0 w-full z-20 pt-10 md:pt-24 ">
 				<div className="container max-w-7xl mx-auto h-full flex flex-col justify-center">
 					<div>
@@ -121,10 +124,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 					</div>
 					<div className="">
 						{isFilled.keyText(slice.items[step].button) && (
-							<Link
-								href="/"
-								className="mt-6 md:mt-10 inline-block bg-white px-5 py-3 text-xs sm:text-sm md:text-md font-semibold border-l-4 border-green-400 hover:bg-gray-100"
-							>
+							<Link href="/" className="btn-custom">
 								<div>{slice.items[step].button}</div>
 							</Link>
 						)}

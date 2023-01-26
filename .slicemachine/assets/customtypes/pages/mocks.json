@@ -1,231 +1,192 @@
 {
-  "uid": {
-    "__TYPE__": "UIDContent",
-    "value": "stared"
-  },
-  "htmlTitle": {
-    "__TYPE__": "FieldContent",
-    "value": "rhythm",
-    "type": "Text"
-  },
-  "route": {
-    "__TYPE__": "FieldContent",
-    "value": "goes",
-    "type": "Text"
-  },
-  "layout": {
-    "__TYPE__": "LinkContent",
-    "value": {
-      "__TYPE__": "DocumentLink",
-      "id": "mock_document_id"
-    }
-  },
-  "slices": {
-    "__TYPE__": "SliceContentType",
-    "value": [
-      {
-        "key": "banner$580166a7-4cbf-49ca-a999-bfb2183226a8",
-        "name": "banner",
-        "widget": {
-          "__TYPE__": "SharedSliceContent",
-          "variation": "default",
-          "primary": {},
-          "items": [
-            {
-              "__TYPE__": "GroupItemContent",
-              "value": [
-                [
-                  "image",
-                  {
-                    "__TYPE__": "ImageContent",
-                    "origin": {
-                      "id": "main",
-                      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
-                      "width": 4000,
-                      "height": 6000
-                    },
-                    "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
-                    "width": 4000,
-                    "height": 6000,
-                    "edit": {
-                      "zoom": 1,
-                      "crop": {
-                        "x": 0,
-                        "y": 0
-                      },
-                      "background": "transparent"
-                    },
-                    "thumbnails": {}
-                  }
-                ],
-                [
-                  "text",
-                  {
-                    "__TYPE__": "StructuredTextContent",
-                    "value": [
-                      {
-                        "type": "paragraph",
-                        "content": {
-                          "text": "Consectetur commodo aliqua qui est officia do. Duis excepteur tempor officia minim labore qui voluptate id ipsum adipisicing proident magna sunt amet. Irure magna esse magna elit velit minim id."
-                        }
-                      }
-                    ]
-                  }
-                ],
-                [
-                  "button",
-                  {
-                    "__TYPE__": "FieldContent",
-                    "value": "store",
-                    "type": "Text"
-                  }
-                ],
-                [
-                  "href",
-                  {
-                    "__TYPE__": "FieldContent",
-                    "value": "list",
-                    "type": "Text"
-                  }
-                ]
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "key": "berita_overview$769f84e5-834d-47ce-8bf6-391d930b6be5",
-        "name": "berita_overview",
-        "widget": {
-          "__TYPE__": "SharedSliceContent",
-          "variation": "default",
-          "primary": {},
-          "items": [
-            {
-              "__TYPE__": "GroupItemContent",
-              "value": []
-            }
-          ]
-        }
-      },
-      {
-        "key": "tentang$90410d29-bec9-492d-8483-7bc2c35a963e",
-        "name": "tentang",
-        "widget": {
-          "__TYPE__": "SharedSliceContent",
-          "variation": "default",
-          "primary": {
-            "title": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Aute sit cillum incididunt sint mollit magna et minim incididunt. Exercitation commodo voluptate aute veniam duis sunt ullamco do."
-                  }
-                }
-              ]
-            },
-            "description": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Fugiat officia proident exercitation amet. Sit in cupidatat aliqua mollit."
-                  }
-                }
-              ]
-            },
-            "image": {
-              "__TYPE__": "ImageContent",
-              "origin": {
-                "id": "main",
-                "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-                "width": 4076,
-                "height": 2712
-              },
-              "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-              "width": 4076,
-              "height": 2712,
-              "edit": {
-                "zoom": 1,
-                "crop": {
-                  "x": 0,
-                  "y": 0
-                },
-                "background": "transparent"
-              },
-              "thumbnails": {}
-            }
-          },
-          "items": [
-            {
-              "__TYPE__": "GroupItemContent",
-              "value": []
-            }
-          ]
-        }
-      },
-      {
-        "key": "header$04c02cea-53a6-49f4-be26-3210cb6ff52c",
-        "name": "header",
-        "widget": {
-          "__TYPE__": "SharedSliceContent",
-          "variation": "default",
-          "primary": {
-            "title": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "heading1",
-                  "content": {
-                    "text": "Struggle"
-                  }
-                }
-              ]
-            },
-            "description": {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Excepteur mollit in nulla incididunt aliqua irure elit dolore ad fugiat velit ad aliquip Lorem occaecat. Est commodo velit dolor nostrud sunt nisi esse elit dolor in adipisicing eu. Ex occaecat elit non velit aute nulla nulla velit sint veniam ipsum sit cupidatat adipisicing."
-                  }
-                }
-              ]
-            },
-            "image": {
-              "__TYPE__": "ImageContent",
-              "origin": {
-                "id": "main",
-                "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
-                "width": 4000,
-                "height": 4000
-              },
-              "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
-              "width": 4000,
-              "height": 4000,
-              "edit": {
-                "zoom": 1,
-                "crop": {
-                  "x": 0,
-                  "y": 0
-                },
-                "background": "transparent"
-              },
-              "thumbnails": {}
-            }
-          },
-          "items": [
-            {
-              "__TYPE__": "GroupItemContent",
-              "value": []
-            }
-          ]
-        }
-      }
-    ]
-  }
+	"uid": {
+		"__TYPE__": "UIDContent",
+		"value": "part"
+	},
+	"htmlTitle": {
+		"__TYPE__": "FieldContent",
+		"value": "drove",
+		"type": "Text"
+	},
+	"route": {
+		"__TYPE__": "FieldContent",
+		"value": "nobody",
+		"type": "Text"
+	},
+	"layout": {
+		"__TYPE__": "LinkContent",
+		"value": {
+			"__TYPE__": "DocumentLink",
+			"id": "mock_document_id"
+		}
+	},
+	"slices": {
+		"__TYPE__": "SliceContentType",
+		"value": [
+			{
+				"key": "banner$cd98b37f-bb3b-440f-b69f-3cba86f9d740",
+				"name": "banner",
+				"widget": {
+					"__TYPE__": "SharedSliceContent",
+					"variation": "default",
+					"primary": {},
+					"items": [
+						{
+							"__TYPE__": "GroupItemContent",
+							"value": [
+								[
+									"image",
+									{
+										"__TYPE__": "ImageContent",
+										"origin": {
+											"id": "main",
+											"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+											"width": 4000,
+											"height": 6000
+										},
+										"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+										"width": 4000,
+										"height": 6000,
+										"edit": {
+											"zoom": 1,
+											"crop": {
+												"x": 0,
+												"y": 0
+											},
+											"background": "transparent"
+										},
+										"thumbnails": {}
+									}
+								],
+								[
+									"text",
+									{
+										"__TYPE__": "StructuredTextContent",
+										"value": [
+											{
+												"type": "paragraph",
+												"content": {
+													"text": "Consequat officia qui eu elit proident sit deserunt. Amet cupidatat et sit pariatur reprehenderit et consectetur eiusmod minim ipsum aliquip ullamco reprehenderit."
+												}
+											}
+										]
+									}
+								],
+								[
+									"button",
+									{
+										"__TYPE__": "FieldContent",
+										"value": "student",
+										"type": "Text"
+									}
+								],
+								[
+									"href",
+									{
+										"__TYPE__": "FieldContent",
+										"value": "dry",
+										"type": "Text"
+									}
+								]
+							]
+						}
+					]
+				}
+			},
+			{
+				"key": "berita_overview$44220bf4-b654-4752-a1dd-655d9b62c158",
+				"name": "berita_overview",
+				"widget": {
+					"__TYPE__": "SharedSliceContent",
+					"variation": "default",
+					"primary": {
+						"tampilkanSemua": {
+							"__TYPE__": "BooleanContent",
+							"value": true
+						}
+					},
+					"items": [
+						{
+							"__TYPE__": "GroupItemContent",
+							"value": []
+						}
+					]
+				}
+			},
+			{
+				"key": "tentang$2c9600db-5c03-4997-a89c-5c010805dec7",
+				"name": "tentang",
+				"widget": {
+					"__TYPE__": "SharedSliceContent",
+					"variation": "default",
+					"primary": {
+						"title": {
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Fugiat ea qui ad commodo in laboris esse ex veniam cupidatat consequat qui fugiat ullamco amet."
+									}
+								}
+							]
+						},
+						"description": {
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Dolor aliquip labore incididunt fugiat consequat cillum cupidatat non minim elit reprehenderit consectetur esse sit. Reprehenderit enim commodo qui est eiusmod ipsum culpa sit incididunt elit. Ex dolore eu tempor ut voluptate eiusmod fugiat elit nisi sit elit."
+									}
+								}
+							]
+						},
+						"image": {
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+								"width": 2747,
+								"height": 4120
+							},
+							"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+							"width": 2747,
+							"height": 4120,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
+						}
+					},
+					"items": [
+						{
+							"__TYPE__": "GroupItemContent",
+							"value": []
+						}
+					]
+				}
+			},
+			{
+				"key": "agenda_pengumuman$b3f4b59e-f2f5-4b11-bf9e-4863b72cc471",
+				"name": "agenda_pengumuman",
+				"widget": {
+					"__TYPE__": "SharedSliceContent",
+					"variation": "default",
+					"primary": {},
+					"items": [
+						{
+							"__TYPE__": "GroupItemContent",
+							"value": []
+						}
+					]
+				}
+			}
+		]
+	}
 }

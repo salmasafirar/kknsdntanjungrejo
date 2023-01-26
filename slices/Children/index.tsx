@@ -2,17 +2,19 @@ import React from 'react';
 import { SliceComponentProps } from '@prismicio/react';
 import { Content } from '@prismicio/client';
 import { ContextType } from '@core/prismic/types';
+import { useRouter } from 'next/router';
 
 const Children = ({ context }: SliceComponentProps<Content.ChildrenSlice, ContextType>) => {
-	const {
-		children,
-		minHeight,
-		className = 'w-full overflow-hidden flex-sc col',
-		style
-	} = context.children ?? {};
+	const { children, minHeight, className = 'w-full flex-sc col', style } = context.children ?? {};
+	const router = useRouter();
 	return (
 		<main style={{ minHeight, ...style }} className={className}>
-			<div className="w-full bg-green-400 py-3">
+			<div
+				className="w-full bg-green-400 py-3"
+				style={{
+					marginBottom: router.asPath === '/' ? '0' : '82px'
+				}}
+			>
 				<div className="container max-w-7xl mx-auto">
 					<div className="flex justify-between items-center marquee">
 						<p className="text-white text-xs md:text-sm flex items-center space-x-2">

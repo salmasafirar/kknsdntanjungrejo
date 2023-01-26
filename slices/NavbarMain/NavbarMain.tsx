@@ -26,16 +26,22 @@ const NavbarMain = ({
 }: SliceComponentProps<NavbarSliceType, ContextType>) => {
 	const { logo } = slice.primary;
 	const router = useRouter();
+	const { asPath } = router;
 	const [linkHovered, setLinkHovered] = React.useState({
 		width: 0,
 		left: 0
 	});
 	const [isScrolled, setIsScrolled] = React.useState(false);
 
+	const isActive = (route: string) => {
+		if (route === '/') return asPath === route;
+		return asPath.includes(route);
+	};
+
 	React.useEffect(() => {
 		const handleScroll = () => {
 			const offset = window.scrollY;
-			if (offset > 70) {
+			if (offset > 50) {
 				setIsScrolled(true);
 			} else {
 				setIsScrolled(false);
@@ -80,7 +86,9 @@ const NavbarMain = ({
 		}
 	}, []);
 
-	const { asPath } = router;
+	const goHome = () => {
+		router.push('/');
+	};
 
 	return (
 		<header
@@ -92,16 +100,17 @@ const NavbarMain = ({
 			ref={upperRef}
 		>
 			<div className="mx-auto flex max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-				<Link href="/">
-					<div
-						style={isScrolled ? { height: '64px' } : { height: '80px' }}
-						className="relative overflow-hidden duration-200"
-					>
-						{isFilled.image(logo) && (
-							<img src={logo.url} alt="" className="w-full h-full object-contain" />
-						)}
-					</div>
-				</Link>
+				{/* <Link href="/"> */}
+				<div
+					onClick={goHome}
+					style={isScrolled ? { height: '64px' } : { height: '80px' }}
+					className="relative overflow-hidden duration-200 cursor-pointer"
+				>
+					{isFilled.image(logo) && (
+						<img src={logo.url} alt="" className="w-full h-full object-contain" />
+					)}
+				</div>
+				{/* </Link> */}
 				<div className="flex flex-1 items-center justify-end">
 					<nav aria-label="Site Nav" className="hidden md:block">
 						<ul className="flex items-center gap-6 relative" onMouseLeave={leave}>
@@ -109,11 +118,11 @@ const NavbarMain = ({
 								if (isFilled.keyText(item.route))
 									return (
 										<li key={index} onMouseEnter={onHover}>
-											<Link href={item.route}>
+											<Link href={item.route} scroll>
 												<div
 													className={[
 														['transition hover:text-green-500 py-8'],
-														asPath === item.route ? ['text-green-500'] : ['text-gray-800']
+														isActive(item.route) ? ['text-green-500'] : ['text-gray-800']
 													].join(' ')}
 												>
 													{item.text}

@@ -8,8 +8,6 @@ import { isFilled } from '@prismicio/helpers';
  * @param { TentangProps }
  */
 const Tentang = ({ slice }: any) => {
-	console.log(slice);
-
 	return (
 		<section>
 			<div className="mx-auto max-w-7xl px-4 pb-10 pt-16 md:pt-20 md:py-14 sm:px-6 lg:px-8">
@@ -45,12 +43,8 @@ const Tentang = ({ slice }: any) => {
 								)}
 							</div>
 
-							<div className="mt-4 text-gray-600 text-justify -md:text-sm">
-								{slice.primary.description ? (
-									<PrismicRichText field={slice.primary.description} />
-								) : (
-									<p>start by editing this slice from inside Slice Machine!</p>
-								)}
+							<div className="mt-4 text-gray-600 text-justify -md:text-sm -sm:leading-loose leading-relaxed">
+								{slice.primary.description && <PrismicRichText field={slice.primary.description} />}
 							</div>
 						</div>
 					</div>

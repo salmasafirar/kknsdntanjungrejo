@@ -26,11 +26,11 @@
           "placeholder": ""
         }
       },
-      "tanggal": {
+      "date": {
         "type": "Date",
         "config": {
-          "label": "Tanggal",
-          "placeholder": ""
+          "label": "date",
+          "placeholder": "Tanggal"
         }
       }
     }

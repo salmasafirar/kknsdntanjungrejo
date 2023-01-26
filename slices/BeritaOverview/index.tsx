@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import { BeritaOverviewSlice } from '@slicemachine/prismicio';
 import { ContextType } from '@core/prismic/types';
 import Link from '@components/_shared/Link';
 import Image from 'next/image';
 import { isFilled } from '@prismicio/helpers';
+import Pagination from '@components/_shared/pagination/Pagination';
+import { useRouter } from 'next/router';
 
 /**
  * @typedef {import("@prismicio/client").Content.BeritaOverviewSlice} BeritaOverviewSlice
@@ -16,24 +18,48 @@ const BeritaOverview = ({
 	context
 }: SliceComponentProps<BeritaOverviewSlice, ContextType>) => {
 	const { news } = context;
+	const { tampilkanSemua } = slice.primary;
 
-	console.log(news);
+	const { page } = useRouter().query;
+
 	const limitedNews = useMemo(() => news.slice(0, 3), [news]);
+
+	const paginatedNews = useMemo(() => {
+		if (page) {
+			const pageInt = parseInt(page as string);
+			const start = (pageInt - 1) * 6;
+			const end = start + 6;
+			return news.slice(start, end);
+		}
+		return news.slice(0, 6);
+	}, [news, page]);
+
+	const newsList = tampilkanSemua ? paginatedNews : limitedNews;
+
 	return (
 		<section className="w-full py-10 md:py-14">
 			<div className="max-w-7xl container mx-auto">
 				<div className="flex justify-between items-center">
-					<h1 className="text-lg sm:text-xl lg:text-3xl font-semibold">Berita terkini</h1>
-					<Link href="/berita" className="-sm:text-sm text-green-500">
-						Lihat semua
-					</Link>
+					<h1 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800">
+						Berita terkini
+					</h1>
+					{!tampilkanSemua && (
+						<Link href="/berita" className="-sm:text-sm text-green-500">
+							Lihat semua
+						</Link>
+					)}
 				</div>
-				<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-					{limitedNews.map((item, index) => {
+				<div className="mt-6 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{newsList.map((item, index) => {
 						const data = item.data;
 						return <NewsCard key={index} data={data} uid={item.uid} />;
 					})}
 				</div>
+				{tampilkanSemua && (
+					<div className="mt-10">
+						<Pagination totalPageCount={news.length / 6} />
+					</div>
+				)}
 			</div>
 		</section>
 	);
@@ -72,13 +98,13 @@ const NewsCard = ({ data, uid }: any) => {
 						<p className="text-xs font-medium text-white">{data.date}</p>
 					</div>
 				</div>
-				<div className="px-2 md:px-4 py-4 md:py-5 duration-300">
+				<div className="px-3 md:px-4 py-4 md:py-5 duration-300">
 					<div className="relative">
 						<div className="text-xl -sm:text-lg font-semibold w-full line-clamp-2 group-hover/card:text-green-500">
 							<PrismicRichText field={data.title} />
 						</div>
 					</div>
-					<div className="text-gray-500 mt-4 line-clamp-2 text-sm">
+					<div className="text-gray-500 mt-2 md:mt-3 line-clamp-2 text-sm">
 						<PrismicRichText field={data.description} />
 					</div>
 				</div>

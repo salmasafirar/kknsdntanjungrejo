@@ -10,36 +10,88 @@ import Image from 'next/image';
 import { format as formatDate } from 'date-fns';
 import { PrismicRichText, SliceZone } from '@prismicio/react';
 import { components } from '@slices/index';
+import Link from '@components/_shared/Link';
 
-const CustomPage = ({ content, layout_content }: any): JSX.Element => {
+const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 	const router = useRouter();
 
 	const title = asText(content.title);
 
 	const date = new Date(content.date);
 
+	const { news } = context;
+
+	const limitNews = news.slice(0, 5);
+
 	return (
 		<DynamicLayout content={layout_content} title={title} key={router.asPath}>
-			<section className="w-full pt-20 md:pt-32 lg:pt-36">
-				<div className="max-w-3xl container mx-auto mb-10">
-					<h1 className="text-4xl font-bold">{title}</h1>
-					<p className="mt-4 text-sm">{formatDate(date, 'dd MMMM yyyy')}</p>
-					<div className="mt-4">
-						<PrismicRichText field={content.description} />
+			<section className="container max-w-7xl mx-auto pt-10 md:pt-16 grid grid-cols-1 md:grid-cols-10 md:gap-4">
+				<div className="md:col-span-7">
+					<div className="w-full mx-auto mb-8 md:mb-10">
+						<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">{title}</h1>
+						<p className="mt-4 text-xs md:text-sm py-1 px-2 text-white bg-green-500 w-max">
+							{formatDate(date, 'dd MMMM yyyy')}
+						</p>
+						<div className="-md:text-sm mt-4">
+							<PrismicRichText field={content.description} />
+						</div>
+					</div>
+					<div className="w-full mx-auto">
+						<div className="w-full h-[200px] md:h-[300px] lg:h-[450px] relative mx-auto">
+							<Image
+								src={content.image.url}
+								alt={content.image.alt || 'cover'}
+								objectFit="cover"
+								layout="fill"
+							/>
+						</div>
+					</div>
+					<div className="w-full mx-auto mt-10 md:pb-10">
+						<SliceZone slices={content.slices} components={components} />
 					</div>
 				</div>
-				<div className="max-w-4xl mx-auto">
-					<div className="w-full h-[200px] md:h-[300px] lg:h-[450px] relative mx-auto">
-						<Image
-							src={content.image.url}
-							alt={content.image.alt || 'cover'}
-							objectFit="cover"
-							layout="fill"
-						/>
+				<div className="md:col-span-3 md:pl-8 -md:pt-4">
+					<div className="sticky top-28 right-0 pb-10 md:pb-20">
+						<h1 className="text-lg pl-3 border-l-4 border-green-500 font-medium">Berita Lainnya</h1>
+						<div className="mt-6">
+							{limitNews &&
+								limitNews.map((item: any) => {
+									const { title = '', description = '', date = '', image } = item.data;
+									return (
+										<Link href={`/berita/${item.uid}`} key={item.uid}>
+											<div className="flex items-center bg-white shadow-sm px-2 py-1.5">
+												<div className="w-1/4 h-[80px] relative bg-gray-300">
+													{image && (
+														<Image
+															src={image.url}
+															alt={image.alt || 'cover'}
+															layout="fill"
+															objectFit="cover"
+														/>
+													)}
+												</div>
+
+												<div
+													key={item.uid}
+													className="w-3/4 px-3 bg-white mb-3 cursor-pointer hover:bg-gray-50"
+												>
+													<p className="text-xs text-green-500">
+														{formatDate(new Date(date), 'dd MMMM yyyy')}
+													</p>
+													<h3 className="mt-1 font-medium">{asText(title)}</h3>
+													<p className="text-xs mt-1 line-clamp-1 text-gray-600">
+														{asText(description)}
+													</p>
+												</div>
+											</div>
+										</Link>
+									);
+								})}
+						</div>
+						<Link href="/berita">
+							<div className="btn-primary mt-8">Lihat semua berita</div>
+						</Link>
 					</div>
-				</div>
-				<div className="max-w-3xl container mx-auto mt-10 pb-10">
-					<SliceZone slices={content.slices} components={components} />
 				</div>
 			</section>
 			{/* <SliceZone slices={content.slices} components={components} /> */}
@@ -55,6 +107,15 @@ export const getStaticProps = async ({ params, previewData }: any) => {
 		const PageDoc = await queryByUID(client, 'berita', slug);
 		const content = PageDoc.data;
 
+		const news = await client
+			.getAllByType('berita', {
+				orderings: {
+					field: 'my.berita.date',
+					direction: 'desc'
+				}
+			})
+			.then((res) => res);
+
 		const layoutId = content.layout.uid;
 
 		const layoutDoc = await queryLayout(client, layoutId);
@@ -62,7 +123,10 @@ export const getStaticProps = async ({ params, previewData }: any) => {
 		return {
 			props: {
 				content,
-				layout_content: layoutDoc
+				layout_content: layoutDoc,
+				context: {
+					news: news.filter((item: any) => item.uid !== slug)
+				}
 			}
 		};
 	} catch (error) {
