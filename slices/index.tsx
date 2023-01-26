@@ -4,6 +4,7 @@ import Banner from './Banner';
 import BeritaOverview from './BeritaOverview';
 import Children from './Children';
 import FooterMain from './FooterMain';
+import Header from './Header';
 import Image from './Image';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
@@ -14,10 +15,11 @@ export {
 	BeritaOverview,
 	Children,
 	FooterMain,
+	Header,
 	Image,
 	NavbarMain,
 	Paragraph,
-	Tentang,
+	Tentang
 };
 
 export const components = {
@@ -25,8 +27,10 @@ export const components = {
 	berita_overview: BeritaOverview,
 	children: Children,
 	footer_main: FooterMain,
+	header: Header,
 	image: Image,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
-	tentang: Tentang,
+	tentang: Tentang
 };
+

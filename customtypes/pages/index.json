@@ -49,6 +49,9 @@
             },
             "tentang": {
               "type": "SharedSlice"
+            },
+            "header": {
+              "type": "SharedSlice"
             }
           }
         }

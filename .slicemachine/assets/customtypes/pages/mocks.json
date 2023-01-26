@@ -1,16 +1,16 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "current"
+    "value": "stared"
   },
   "htmlTitle": {
     "__TYPE__": "FieldContent",
-    "value": "equator",
+    "value": "rhythm",
     "type": "Text"
   },
   "route": {
     "__TYPE__": "FieldContent",
-    "value": "cold",
+    "value": "goes",
     "type": "Text"
   },
   "layout": {
@@ -24,7 +24,7 @@
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "banner$075977b7-3a4c-4e1a-8c5b-b483e4d79f33",
+        "key": "banner$580166a7-4cbf-49ca-a999-bfb2183226a8",
         "name": "banner",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -40,13 +40,13 @@
                     "__TYPE__": "ImageContent",
                     "origin": {
                       "id": "main",
-                      "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
-                      "width": 6597,
-                      "height": 4398
+                      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+                      "width": 4000,
+                      "height": 6000
                     },
-                    "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
-                    "width": 6597,
-                    "height": 4398,
+                    "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+                    "width": 4000,
+                    "height": 6000,
                     "edit": {
                       "zoom": 1,
                       "crop": {
@@ -66,7 +66,7 @@
                       {
                         "type": "paragraph",
                         "content": {
-                          "text": "Aliqua aliqua deserunt tempor nulla excepteur fugiat."
+                          "text": "Consectetur commodo aliqua qui est officia do. Duis excepteur tempor officia minim labore qui voluptate id ipsum adipisicing proident magna sunt amet. Irure magna esse magna elit velit minim id."
                         }
                       }
                     ]
@@ -76,7 +76,7 @@
                   "button",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "wrote",
+                    "value": "store",
                     "type": "Text"
                   }
                 ],
@@ -84,7 +84,7 @@
                   "href",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "percent",
+                    "value": "list",
                     "type": "Text"
                   }
                 ]
@@ -94,7 +94,7 @@
         }
       },
       {
-        "key": "berita_overview$b9cad96f-e300-43d4-a297-5c92e48d161b",
+        "key": "berita_overview$769f84e5-834d-47ce-8bf6-391d930b6be5",
         "name": "berita_overview",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -109,7 +109,7 @@
         }
       },
       {
-        "key": "tentang$07aacb70-47d3-4838-8052-1e5c29dbc5bf",
+        "key": "tentang$90410d29-bec9-492d-8483-7bc2c35a963e",
         "name": "tentang",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -121,7 +121,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Dolor amet consectetur eu reprehenderit est sunt. Excepteur non est quis consequat ullamco aliquip occaecat labore in voluptate dolor sunt laborum. Elit veniam occaecat magna consequat."
+                    "text": "Aute sit cillum incididunt sint mollit magna et minim incididunt. Exercitation commodo voluptate aute veniam duis sunt ullamco do."
                   }
                 }
               ]
@@ -132,7 +132,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Nulla minim commodo velit incididunt veniam culpa aute ex velit culpa ad labore ad dolore. Excepteur irure aute sit cillum."
+                    "text": "Fugiat officia proident exercitation amet. Sit in cupidatat aliqua mollit."
                   }
                 }
               ]
@@ -141,13 +141,72 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-                "width": 4752,
-                "height": 3168
+                "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+                "width": 4076,
+                "height": 2712
               },
-              "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-              "width": 4752,
-              "height": 3168,
+              "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+              "width": 4076,
+              "height": 2712,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "header$04c02cea-53a6-49f4-be26-3210cb6ff52c",
+        "name": "header",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Struggle"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Excepteur mollit in nulla incididunt aliqua irure elit dolore ad fugiat velit ad aliquip Lorem occaecat. Est commodo velit dolor nostrud sunt nisi esse elit dolor in adipisicing eu. Ex occaecat elit non velit aute nulla nulla velit sint veniam ipsum sit cupidatat adipisicing."
+                  }
+                }
+              ]
+            },
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+                "width": 4000,
+                "height": 4000
+              },
+              "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+              "width": 4000,
+              "height": 4000,
               "edit": {
                 "zoom": 1,
                 "crop": {
