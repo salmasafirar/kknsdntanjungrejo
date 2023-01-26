@@ -19,7 +19,7 @@ export {
 	Image,
 	NavbarMain,
 	Paragraph,
-	Tentang
+	Tentang,
 };
 
 export const components = {
@@ -31,6 +31,5 @@ export const components = {
 	image: Image,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
-	tentang: Tentang
+	tentang: Tentang,
 };
-

@@ -37,12 +37,11 @@
           },
           "type": "Text"
         },
-        "link": {
-          "type": "Link",
+        "route": {
+          "type": "Text",
           "config": {
-            "label": "link",
-            "placeholder": "",
-            "select": null
+            "label": "route",
+            "placeholder": ""
           }
         }
       },

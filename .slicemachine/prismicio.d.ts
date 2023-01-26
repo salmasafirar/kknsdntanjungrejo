@@ -563,15 +563,15 @@ export interface FooterMainSliceDefaultItem {
      */
     text: prismicT.KeyTextField;
     /**
-     * link field in *FooterMain → Items*
+     * route field in *FooterMain → Items*
      *
-     * - **Field Type**: Link
+     * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: footer_main.items[].link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     * - **API ID Path**: footer_main.items[].route
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    link: prismicT.LinkField;
+    route: prismicT.KeyTextField;
 }
 /**
  * Default variation for FooterMain Slice
