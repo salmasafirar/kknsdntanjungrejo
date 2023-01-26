@@ -1,100 +1,103 @@
 {
-	"_cts": {
-		"pages": {},
-		"redirect_link": {},
-		"layouts": {},
-		"berita": {
-			"title": {
-				"config": {
-					"patternType": "PARAGRAPH",
-					"blocks": 1
-				}
-			},
-			"description": {
-				"config": {
-					"patternType": "PARAGRAPH",
-					"blocks": 1
-				}
-			}
-		},
-		"gallery": {},
-		"agenda": {},
-		"pengumuman": {}
-	},
-	"slices": {
-		"Paragraph": {
-			"default": {
-				"primary": {
-					"text": {
-						"config": {
-							"patternType": "PARAGRAPH",
-							"blocks": 1
-						}
-					}
-				}
-			}
-		},
-		"Image": {
-			"default": {
-				"primary": {}
-			}
-		},
-		"FooterMain": {
-			"default": {
-				"primary": {},
-				"items": {}
-			}
-		},
-		"NavbarMain": {
-			"default": {
-				"primary": {},
-				"items": {}
-			}
-		},
-		"Children": {
-			"default": {
-				"primary": {}
-			}
-		},
-		"Banner": {
-			"default": {
-				"primary": {},
-				"items": {
-					"text": {
-						"config": {
-							"patternType": "PARAGRAPH",
-							"blocks": 1
-						}
-					}
-				}
-			}
-		},
-		"BeritaOverview": {
-			"default": {
-				"primary": {}
-			}
-		},
-		"Tentang": {
-			"default": {
-				"primary": {
-					"title": {
-						"config": {
-							"patternType": "PARAGRAPH",
-							"blocks": 1
-						}
-					}
-				}
-			}
-		},
-		"TopBanner": {
-			"default": {
-				"primary": {}
-			}
-		},
-		"AgendaPengumuman": {
-			"default": {
-				"primary": {}
-			}
-		}
-	}
+  "_cts": {
+    "pages": {},
+    "redirect_link": {},
+    "layouts": {},
+    "berita": {
+      "title": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "gallery": {},
+    "agenda": {},
+    "pengumuman": {}
+  },
+  "slices": {
+    "Paragraph": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Image": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "FooterMain": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "NavbarMain": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Children": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Banner": {
+      "default": {
+        "primary": {},
+        "items": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "BeritaOverview": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Tentang": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TopBanner": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "AgendaPengumuman": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Profil": {},
+    "BannerProfil": {},
+    "Tentangkami": {}
+  }
 }

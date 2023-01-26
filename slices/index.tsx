@@ -2,6 +2,7 @@
 
 import AgendaPengumuman from './AgendaPengumuman';
 import Banner from './Banner';
+import BannerProfil from './BannerProfil';
 import BeritaOverview from './BeritaOverview';
 import Children from './Children';
 import FooterMain from './FooterMain';
@@ -10,10 +11,12 @@ import Image from './Image';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
 import Tentang from './Tentang';
+import Tentangkami from './Tentangkami';
 
 export {
 	AgendaPengumuman,
 	Banner,
+	BannerProfil,
 	BeritaOverview,
 	Children,
 	FooterMain,
@@ -22,11 +25,13 @@ export {
 	NavbarMain,
 	Paragraph,
 	Tentang,
+	Tentangkami,
 };
 
 export const components = {
 	agenda_pengumuman: AgendaPengumuman,
 	banner: Banner,
+	profil: BannerProfil,
 	berita_overview: BeritaOverview,
 	children: Children,
 	footer_main: FooterMain,
@@ -35,4 +40,5 @@ export const components = {
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,
+	tentangkami: Tentangkami,
 };
