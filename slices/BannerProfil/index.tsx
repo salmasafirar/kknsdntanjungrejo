@@ -48,4 +48,3 @@ const Profil = ({ slice, context }: any) => {
 };
 
 export default Profil;
-

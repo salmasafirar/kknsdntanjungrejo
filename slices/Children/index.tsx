@@ -12,7 +12,7 @@ const Children = ({ context }: SliceComponentProps<Content.ChildrenSlice, Contex
 			<div
 				className="w-full bg-green-400 py-3"
 				style={{
-					marginBottom: router.asPath === '/' ? '0' : '82px'
+					marginBottom: router.asPath === '/' ? '0' : '64px'
 				}}
 			>
 				<div className="container max-w-7xl mx-auto">

@@ -8,6 +8,7 @@ import Children from './Children';
 import FooterMain from './FooterMain';
 import Header from './Header';
 import Image from './Image';
+import KomiteGrid from './KomiteGrid';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
 import Tentang from './Tentang';
@@ -22,6 +23,7 @@ export {
 	FooterMain,
 	Header,
 	Image,
+	KomiteGrid,
 	NavbarMain,
 	Paragraph,
 	Tentang,
@@ -37,6 +39,7 @@ export const components = {
 	footer_main: FooterMain,
 	header: Header,
 	image: Image,
+	komite_grid: KomiteGrid,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,

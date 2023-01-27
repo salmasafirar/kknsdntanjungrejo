@@ -22,6 +22,12 @@ module.exports = {
 				'-lg': { raw: '(max-width: 1023px)' },
 				'-md': { raw: '(max-width: 767px)' },
 				'-sm': { raw: '(max-width: 639px)' }
+			},
+			aspectRatio: {
+				'3/2': '3/2',
+				'2/3': '2/3',
+				'4/3': '4/3',
+				'3/4': '3/4'
 			}
 		}
 	},

@@ -38,7 +38,7 @@ const BeritaOverview = ({
 
 	return (
 		<section className="w-full py-10 md:py-14">
-			<div className="max-w-7xl container mx-auto">
+			<div className="max-w-7xl container mx-auto pt-4">
 				<div className="flex justify-between items-center">
 					<h1 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800">
 						Berita terkini
@@ -68,14 +68,14 @@ const BeritaOverview = ({
 const NewsCard = ({ data, uid }: any) => {
 	return (
 		<Link href={`/berita/${uid}`} className="group">
-			<div className="bg-white shadow-sm group/card cursor-pointer overflow-hidden duration-300">
-				<div className="w-full h-[200px] md:h-[240px] lg:h-[280px] relative duration-300 overflow-hidden">
+			<div className="bg-white px-3 md:px-4 py-4 md:py-5 shadow-sm group/card cursor-pointer overflow-hidden duration-300">
+				<div className="w-full mb-4 h-[200px] md:h-[230px] lg:h-[260px] relative duration-300 overflow-hidden">
 					{data.image && (
 						<Image
 							src={data.image.url}
 							layout="fill"
 							objectFit="cover"
-							className="group-hover/card:scale-110 duration-300 brightness-90 group-hover/card:brightness-100"
+							className="duration-300 brightness-90 group-hover/card:brightness-75"
 						/>
 					)}
 
@@ -98,7 +98,7 @@ const NewsCard = ({ data, uid }: any) => {
 						<p className="text-xs font-medium text-white">{data.date}</p>
 					</div>
 				</div>
-				<div className="px-3 md:px-4 py-4 md:py-5 duration-300">
+				<div className="duration-300">
 					<div className="relative">
 						<div className="text-xl -sm:text-lg font-semibold w-full line-clamp-2 group-hover/card:text-green-500">
 							<PrismicRichText field={data.title} />

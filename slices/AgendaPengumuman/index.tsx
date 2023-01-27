@@ -30,7 +30,7 @@ const useScrollPosition = () => {
 const AgendaPengumuman = ({ slice, context }: any) => {
 	const { pengumuman = [], agenda = [] } = context;
 
-	const scrollPosition = useScrollPosition();
+	// const scrollPosition = useScrollPosition();
 
 	const agendaList = useMemo(() => agenda.slice(0, 3) || [], [agenda]);
 
@@ -38,14 +38,16 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 
 	return (
 		<section
-			className="mt-10 py-8 md:py-8 w-full bg-gray-800"
+			className="mt-10 py-8 md:py-8 w-full bg-gray-400"
 			style={{
 				backgroundImage:
 					'url(https://images.prismic.io/sdntanjungrejo01/14cc99b7-eec8-40cd-a909-cb17fc66dfc3_20230118_112035.jpg?auto=compress,format)',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
-				// backgroundAttachment: 'fixed',
-				backgroundPositionY: (scrollPosition * 2.5) / 8
+				backgroundAttachment: 'fixed',
+				// backgroundPositionY: (scrollPosition * 2.5) / 8,
+				backgroundBlendMode: 'multiply'
+				// backgroundColor: 'rgba(0, 0, 0, 0.02)'
 			}}
 		>
 			<div className="sm:max-w-7xl -sm:mx-4 -sm:px-4 -sm:py-3 sm:container bg-white py-8 shadow-xl">

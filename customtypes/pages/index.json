@@ -58,6 +58,9 @@
             },
             "tentangkami": {
               "type": "SharedSlice"
+            },
+            "komite_grid": {
+              "type": "SharedSlice"
             }
           }
         }
