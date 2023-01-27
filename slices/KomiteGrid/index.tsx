@@ -15,13 +15,13 @@ const KomiteGrid = ({ slice }: SliceComponentProps<KomiteGridSlice>) => {
 	return (
 		<section className="w-full pt-14 md:pt-20 last:pb-20">
 			<div className="container mx-auto max-w-7xl">
-				<div className="mb-10">
+				<div className="mb-6 md:mb-8">
 					<h3 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800 w-max">
 						{asText(title)}
 					</h3>
 				</div>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-7">
 					{slice.items.map((item, index) => {
 						const { nama, posisi, foto, moreInfo, email, nohp } = item;
 						return (
@@ -37,8 +37,8 @@ const KomiteGrid = ({ slice }: SliceComponentProps<KomiteGridSlice>) => {
 									</div>
 									<div className="w-3/4 pl-4">
 										<h4 className="text-lg md:text-xl font-semibold">{nama}</h4>
-										<p className="-md:text-sm text-gray-500">{posisi}</p>
-										<p className="text-xs mt-1">{moreInfo}</p>
+										<p className="text-sm text-gray-500">{posisi}</p>
+										<p className="text-xs mt-1.5">{moreInfo}</p>
 										{(email || nohp) && (
 											<div className="border-t mt-2 text-xs md:text-sm flex flex-col gap-2 pt-2">
 												{email && (
