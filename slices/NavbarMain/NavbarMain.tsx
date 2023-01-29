@@ -32,6 +32,7 @@ const NavbarMain = ({
 		left: 0
 	});
 	const [isScrolled, setIsScrolled] = React.useState(false);
+	const [mobileMenu, setMobileMenu] = React.useState(false);
 
 	const isActive = (route: string) => {
 		if (route === '/') return asPath === route;
@@ -63,7 +64,7 @@ const NavbarMain = ({
 	};
 
 	const leave = () => {
-		const el = document.querySelector(`a[href="${router.asPath}"]`);
+		const el = document.querySelector(`a[href="${router.asPath}"].nav`);
 		if (el) {
 			const width = (el as any).offsetWidth;
 			const left = (el as any).offsetLeft;
@@ -78,7 +79,7 @@ const NavbarMain = ({
 	// set initial link hover based on current route
 
 	React.useEffect(() => {
-		const el = document.querySelector(`a[href="${router.asPath}"]`);
+		const el = document.querySelector(`a[href="${router.asPath}"].nav`);
 		if (el) {
 			const width = (el as any).offsetWidth;
 			const left = (el as any).offsetLeft;
@@ -99,6 +100,53 @@ const NavbarMain = ({
 			].join(' ')}
 			ref={upperRef}
 		>
+			<div
+				className="fixed md:hidden top-0 left-0 h-screen bg-white z-40 w-full duration-200 p-6"
+				style={{
+					left: mobileMenu ? '0' : '100%'
+				}}
+			>
+				<button
+					onClick={() => {
+						setMobileMenu(!mobileMenu);
+					}}
+					className="ml-auto block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+				>
+					<svg
+						aria-hidden="true"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth={1.5}
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						className="w-5 h-5"
+					>
+						<path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeLinejoin="round" />
+					</svg>
+				</button>
+				<ul className="mt-8">
+					{slice.items.map((item, index) => {
+						if (isFilled.keyText(item.route))
+							return (
+								<li key={index} onMouseEnter={onHover}>
+									<Link href={item.route} scroll>
+										<div
+											onClick={() => {
+												setMobileMenu(!mobileMenu);
+											}}
+											className={[
+												['transition hover:text-green-500 py-5 text-center'],
+												isActive(item.route) ? ['text-green-500'] : ['text-gray-800']
+											].join(' ')}
+										>
+											{item.text}
+										</div>
+									</Link>
+								</li>
+							);
+					})}
+				</ul>
+			</div>
 			<div className="mx-auto flex max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
 				{/* <Link href="/"> */}
 				<div
@@ -118,7 +166,7 @@ const NavbarMain = ({
 								if (isFilled.keyText(item.route))
 									return (
 										<li key={index} onMouseEnter={onHover}>
-											<Link href={item.route} scroll>
+											<Link href={item.route} scroll id="nav" className="nav">
 												<div
 													className={[
 														['transition hover:text-green-500 py-8'],
@@ -142,7 +190,12 @@ const NavbarMain = ({
 					</nav>
 
 					<div className="flex items-center gap-4">
-						<button className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
+						<button
+							onClick={() => {
+								setMobileMenu(!mobileMenu);
+							}}
+							className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+						>
 							<span className="sr-only">Toggle menu</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

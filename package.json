@@ -23,6 +23,7 @@
 		"date-fns": "^2.29.3",
 		"embla-carousel-autoplay": "^7.0.5",
 		"embla-carousel-react": "^7.0.5",
+		"lightgallery": "^2.7.1",
 		"mapbox-gl": "^2.12.0",
 		"next": "12.1.6",
 		"nextjs-progressbar": "^0.0.14",

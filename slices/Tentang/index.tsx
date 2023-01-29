@@ -10,7 +10,7 @@ import { isFilled } from '@prismicio/helpers';
 const Tentang = ({ slice }: any) => {
 	return (
 		<section>
-			<div className="mx-auto max-w-7xl px-4 pb-10 pt-16 md:pt-20 md:py-14 sm:px-6 lg:px-8">
+			<div className="mx-auto container max-w-7xl pb-10 pt-16 md:pt-20 md:py-14">
 				<div className="grid grid-cols-1 lg:h-[500px] lg:grid-cols-2">
 					<div className="relative z-10">
 						<div className="relative h-64 sm:h-80 lg:h-full">
@@ -24,7 +24,7 @@ const Tentang = ({ slice }: any) => {
 					<div className="relative flex items-center bg-gray-100">
 						<span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
 
-						<div className="p-8 sm:p-16 lg:p-26">
+						<div className="p-6 sm:p-16 lg:p-26">
 							<div className="flex items-center space-x-2 md-0 md:mb-4">
 								{slice.primary.title && (
 									<PrismicRichText
