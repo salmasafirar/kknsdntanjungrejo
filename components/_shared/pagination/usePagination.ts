@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 export const DOTS = '...';
 // our range generator function
 const range = (start: any, end: any) => {
-	let length = end - start + 1;
+	let length = Math.ceil(end - start + 1);
 	return Array.from({ length }, (_, index) => index + start);
 };
 

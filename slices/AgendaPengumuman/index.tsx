@@ -38,7 +38,7 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 
 	return (
 		<section
-			className="mt-10 py-8 md:py-8 w-full bg-gray-400"
+			className="mt-10 py-8 md:py-8 w-full bg-gray-600"
 			style={{
 				backgroundImage:
 					'url(https://images.prismic.io/sdntanjungrejo01/14cc99b7-eec8-40cd-a909-cb17fc66dfc3_20230118_112035.jpg?auto=compress,format)',

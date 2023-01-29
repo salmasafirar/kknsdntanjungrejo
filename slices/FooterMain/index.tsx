@@ -121,7 +121,7 @@ const FooterMain = ({
 								latitude: -7.764888,
 								zoom: 14
 							}}
-							style={{ width: 400, height: 300 }}
+							style={{ width: 350, height: 250 }}
 							mapStyle="mapbox://styles/mapbox/streets-v9"
 						>
 							<Marker longitude={110.926966} latitude={-7.764888}>

@@ -17,7 +17,7 @@ const Pagination = ({ totalPageCount = 10 }: { totalPageCount: number }) => {
 	}, [pageNum]);
 
 	const paginationRange = usePaginationRange({
-		totalPageCount,
+		totalPageCount: Math.ceil(totalPageCount),
 		buttonConst: 1,
 		siblingCount: 1,
 		currentPage

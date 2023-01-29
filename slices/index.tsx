@@ -6,6 +6,7 @@ import BannerProfil from './BannerProfil';
 import BeritaOverview from './BeritaOverview';
 import Children from './Children';
 import FooterMain from './FooterMain';
+import GalleryOverview from './GalleryOverview';
 import Header from './Header';
 import Image from './Image';
 import KomiteGrid from './KomiteGrid';
@@ -21,13 +22,14 @@ export {
 	BeritaOverview,
 	Children,
 	FooterMain,
+	GalleryOverview,
 	Header,
 	Image,
 	KomiteGrid,
 	NavbarMain,
 	Paragraph,
 	Tentang,
-	Tentangkami,
+	Tentangkami
 };
 
 export const components = {
@@ -37,11 +39,12 @@ export const components = {
 	berita_overview: BeritaOverview,
 	children: Children,
 	footer_main: FooterMain,
+	gallery_overview: GalleryOverview,
 	header: Header,
 	image: Image,
 	komite_grid: KomiteGrid,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,
-	tentangkami: Tentangkami,
+	tentangkami: Tentangkami
 };
