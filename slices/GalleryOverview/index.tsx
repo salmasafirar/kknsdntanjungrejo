@@ -10,6 +10,7 @@ import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import Link from '@components/_shared/Link';
+import Image from '@components/_shared/Image';
 
 /**
  * @typedef {import("@prismicio/client").Content.GalleryOverviewSlice} GalleryOverviewSlice
@@ -22,7 +23,7 @@ const GalleryOverview = ({ slice, context }: SliceComponentProps<GalleryOverview
 
 	const galleryLimited = useMemo(() => {
 		if (!gallery) return [];
-		return;
+		return gallery.slice(0, 6);
 	}, [gallery]);
 
 	const galleryList = tampilkanSemua ? gallery : galleryLimited;
@@ -55,16 +56,16 @@ const GalleryOverview = ({ slice, context }: SliceComponentProps<GalleryOverview
 						>
 							{galleryList.map((item: any, index: any) => (
 								<div
-									className="aspect-square cursor-pointer duration-200 relative group/gal"
+									className="aspect-square relative cursor-pointer duration-200 group/gal"
 									key={index}
 									data-src={item.data.image.url}
 									data-title={asText(item.data.title)}
 									data-sub-html={asText(item.data.description)}
 								>
-									<div className="absolute inset-0 bg-gray-800/0 duration-200 group-hover/gal:bg-gray-900/40 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover/gal:opacity-100 font-medium">
+									<div className="absolute z-10 inset-0 bg-gray-800/0 duration-200 group-hover/gal:bg-gray-900/40 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover/gal:opacity-100 font-medium">
 										Lihat
 									</div>
-									<img
+									<Image
 										alt={item.data.image.alt}
 										className="w-full h-full object-cover"
 										src={item.data.image.url}

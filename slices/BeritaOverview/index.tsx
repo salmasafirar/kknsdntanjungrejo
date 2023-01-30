@@ -91,14 +91,14 @@ const BeritaOverview = ({
 							</div>
 						</div>
 						<div className="flex justify-end mt-8">
-							<div className="flex items-center bg-white shadow-sm border">
+							<div className="flex items-center shadow-sm space-x-2">
 								<div
 									onClick={scrollPrev}
-									className="py-3 px-4 border-r hover:bg-gray-100 duration-200 active:bg-gray-50 cursor-pointer"
+									className="py-3 bg-white border border-gray-100 px-4 hover:bg-gray-100 duration-200 active:bg-gray-50 cursor-pointer"
 								>
 									<svg
 										aria-hidden="true"
-										className="text-gray-500 w-5 h-5"
+										className="text-gray-500 w-4 md:w-5 h-4 md:h-5"
 										fill="none"
 										stroke="currentColor"
 										strokeWidth={1.5}
@@ -115,7 +115,7 @@ const BeritaOverview = ({
 
 								<div
 									onClick={scrollNext}
-									className="py-3 px-4 hover:bg-gray-100 duration-200 active:bg-gray-50 cursor-pointer"
+									className="py-3 bg-white border border-gray-100 px-4 hover:bg-gray-100 duration-200 active:bg-gray-50 cursor-pointer"
 								>
 									<svg
 										aria-hidden="true"
@@ -124,7 +124,7 @@ const BeritaOverview = ({
 										strokeWidth={1.5}
 										viewBox="0 0 24 24"
 										xmlns="http://www.w3.org/2000/svg"
-										className="text-gray-500 w-5 h-5"
+										className="text-gray-500 w-4 md:w-5 h-4 md:h-5"
 									>
 										<path
 											d="M8.25 4.5l7.5 7.5-7.5 7.5"
