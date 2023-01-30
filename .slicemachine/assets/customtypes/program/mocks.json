@@ -1,0 +1,61 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "trade"
+  },
+  "layout": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Tempor deserunt qui mollit exercitation amet voluptate enim. Adipisicing duis excepteur ex fugiat consectetur eiusmod sunt. Aliquip consequat aliquip proident est culpa cillum voluptate."
+        }
+      }
+    ]
+  },
+  "descriptions": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Duis duis nisi ut amet ut in incididunt et sit irure eiusmod dolore occaecat. Occaecat labore sunt eiusmod culpa ipsum do minim non sit enim elit eiusmod aliquip do. Veniam culpa Lorem fugiat elit esse amet velit ullamco elit irure est et."
+        }
+      }
+    ]
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2014-04-23"
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+      "width": 5616,
+      "height": 3744
+    },
+    "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+    "width": 5616,
+    "height": 3744,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  }
+}
