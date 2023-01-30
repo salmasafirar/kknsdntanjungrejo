@@ -2,7 +2,12 @@
   {
     "__TYPE__": "SharedSliceContent",
     "variation": "default",
-    "primary": {},
+    "primary": {
+      "tampilkanSemua": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      }
+    },
     "items": [
       {
         "__TYPE__": "GroupItemContent",

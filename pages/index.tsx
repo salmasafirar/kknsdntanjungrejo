@@ -70,17 +70,9 @@ export const getStaticProps: GetStaticProps<PageProps, PageParams> = async ({ pr
 				layout_content,
 				context: {
 					news,
-					agenda: agenda
-						.filter((item: any) => new Date(item.data.date).getTime() >= new Date().getTime())
-						.sort(
-							(a: any, b: any) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
-						),
+					agenda,
 					gallery,
-					pengumuman: pengumuman
-						.filter((item: any) => new Date(item.data.date).getTime() >= new Date().getTime())
-						.sort(
-							(a: any, b: any) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
-						)
+					pengumuman
 				}
 			}
 		};
