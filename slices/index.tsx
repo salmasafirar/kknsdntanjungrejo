@@ -29,7 +29,7 @@ export {
 	NavbarMain,
 	Paragraph,
 	Tentang,
-	Tentangkami
+	Tentangkami,
 };
 
 export const components = {
@@ -46,5 +46,5 @@ export const components = {
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,
-	tentangkami: Tentangkami
+	tentangkami: Tentangkami,
 };

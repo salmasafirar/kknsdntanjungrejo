@@ -680,6 +680,17 @@ interface GalleryOverviewSliceDefaultPrimary {
      *
      */
     description: prismicT.RichTextField;
+    /**
+     * Tampilkan Semua Galeri field in *GalleryOverview → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: gallery_overview.primary.tampilkanSemua
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    tampilkanSemua: prismicT.BooleanField;
 }
 /**
  * Default variation for GalleryOverview Slice
