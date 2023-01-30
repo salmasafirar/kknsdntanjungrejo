@@ -113,6 +113,12 @@
     },
     "KomiteGrid": {},
     "GalleryOverview": {},
-    "EkstraOverview": {}
+    "EkstraOverview": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Fasilitas": {},
+    "Kurikulum": {}
   }
 }

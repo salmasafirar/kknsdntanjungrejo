@@ -26,18 +26,50 @@
             "label": "Description",
             "placeholder": "A nice description of your feature"
           }
-        },
-        "tampilkansemua": {
-          "type": "Boolean",
+        }
+      },
+      "items": {
+        "nama": {
+          "type": "StructuredText",
           "config": {
-            "label": "TampilkanSemua",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
+            "label": "nama",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "hari": {
+          "type": "Text",
+          "config": {
+            "label": "Hari",
+            "placeholder": ""
+          }
+        },
+        "tempat": {
+          "type": "Text",
+          "config": {
+            "label": "Tempat",
+            "placeholder": ""
           }
         }
       },
-      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]

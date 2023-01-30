@@ -67,6 +67,15 @@
             },
             "ekstra_overview": {
               "type": "SharedSlice"
+            },
+            "kurikulum": {
+              "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
+            },
+            "fasilitas": {
+              "type": "SharedSlice"
             }
           }
         }

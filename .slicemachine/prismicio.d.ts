@@ -284,7 +284,7 @@ interface PagesDocumentData {
  * Slice for *Pages → Slice Zone*
  *
  */
-type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice | ProfilSlice | TentangkamiSlice | KomiteGridSlice | GalleryOverviewSlice | EkstraOverviewSlice;
+type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice | ProfilSlice | TentangkamiSlice | KomiteGridSlice | GalleryOverviewSlice | EkstraOverviewSlice | KurikulumSlice | ImageSlice | FasilitasSlice;
 /**
  * Pages document from Prismic
  *
@@ -690,17 +690,62 @@ interface EkstraOverviewSliceDefaultPrimary {
      *
      */
     description: prismicT.RichTextField;
+}
+/**
+ * Item in EkstraOverview → Items
+ *
+ */
+export interface EkstraOverviewSliceDefaultItem {
     /**
-     * TampilkanSemua field in *EkstraOverview → Primary*
+     * nama field in *EkstraOverview → Items*
      *
-     * - **Field Type**: Boolean
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **Default Value**: false
-     * - **API ID Path**: ekstra_overview.primary.tampilkansemua
-     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     * - **API ID Path**: ekstra_overview.items[].nama
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    tampilkansemua: prismicT.BooleanField;
+    nama: prismicT.RichTextField;
+    /**
+     * description field in *EkstraOverview → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ekstra_overview.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * image field in *EkstraOverview → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ekstra_overview.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Hari field in *EkstraOverview → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ekstra_overview.items[].hari
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    hari: prismicT.KeyTextField;
+    /**
+     * Tempat field in *EkstraOverview → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ekstra_overview.items[].tempat
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    tempat: prismicT.KeyTextField;
 }
 /**
  * Default variation for EkstraOverview Slice
@@ -710,7 +755,7 @@ interface EkstraOverviewSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type EkstraOverviewSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<EkstraOverviewSliceDefaultPrimary>, never>;
+export type EkstraOverviewSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<EkstraOverviewSliceDefaultPrimary>, Simplify<EkstraOverviewSliceDefaultItem>>;
 /**
  * Slice variation for *EkstraOverview*
  *
@@ -725,6 +770,65 @@ type EkstraOverviewSliceVariation = EkstraOverviewSliceDefault;
  *
  */
 export type EkstraOverviewSlice = prismicT.SharedSlice<"ekstra_overview", EkstraOverviewSliceVariation>;
+/**
+ * Primary content in Fasilitas → Primary
+ *
+ */
+interface FasilitasSliceDefaultPrimary {
+    /**
+     * Title field in *Fasilitas → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: fasilitas.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Fasilitas → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: fasilitas.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Image field in *Fasilitas → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: fasilitas.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Fasilitas Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Fasilitas`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FasilitasSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FasilitasSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Fasilitas*
+ *
+ */
+type FasilitasSliceVariation = FasilitasSliceDefault;
+/**
+ * Fasilitas Shared Slice
+ *
+ * - **API ID**: `fasilitas`
+ * - **Description**: `Fasilitas`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FasilitasSlice = prismicT.SharedSlice<"fasilitas", FasilitasSliceVariation>;
 /**
  * Primary content in FooterMain → Primary
  *
@@ -1084,6 +1188,65 @@ type KomiteGridSliceVariation = KomiteGridSliceDefault;
  */
 export type KomiteGridSlice = prismicT.SharedSlice<"komite_grid", KomiteGridSliceVariation>;
 /**
+ * Primary content in Kurikulum → Primary
+ *
+ */
+interface KurikulumSliceDefaultPrimary {
+    /**
+     * Title field in *Kurikulum → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: kurikulum.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Kurikulum → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: kurikulum.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Image field in *Kurikulum → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: kurikulum.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Kurikulum Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Kurikulum`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type KurikulumSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<KurikulumSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Kurikulum*
+ *
+ */
+type KurikulumSliceVariation = KurikulumSliceDefault;
+/**
+ * Kurikulum Shared Slice
+ *
+ * - **API ID**: `kurikulum`
+ * - **Description**: `Kurikulum`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type KurikulumSlice = prismicT.SharedSlice<"kurikulum", KurikulumSliceVariation>;
+/**
  * Primary content in NavbarMain → Primary
  *
  */
@@ -1310,6 +1473,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, ProgramDocumentData, ProgramDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefaultPrimary, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, ProgramDocumentData, ProgramDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefaultPrimary, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefaultItem, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FasilitasSliceDefaultPrimary, FasilitasSliceDefault, FasilitasSliceVariation, FasilitasSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, KurikulumSliceDefaultPrimary, KurikulumSliceDefault, KurikulumSliceVariation, KurikulumSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
     }
 }

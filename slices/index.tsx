@@ -6,11 +6,13 @@ import BannerProfil from './BannerProfil';
 import BeritaOverview from './BeritaOverview';
 import Children from './Children';
 import EkstraOverview from './EkstraOverview';
+import Fasilitas from './Fasilitas';
 import FooterMain from './FooterMain';
 import GalleryOverview from './GalleryOverview';
 import Header from './Header';
 import Image from './Image';
 import KomiteGrid from './KomiteGrid';
+import Kurikulum from './Kurikulum';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
 import Tentang from './Tentang';
@@ -23,15 +25,17 @@ export {
 	BeritaOverview,
 	Children,
 	EkstraOverview,
+	Fasilitas,
 	FooterMain,
 	GalleryOverview,
 	Header,
 	Image,
 	KomiteGrid,
+	Kurikulum,
 	NavbarMain,
 	Paragraph,
 	Tentang,
-	Tentangkami,
+	Tentangkami
 };
 
 export const components = {
@@ -41,13 +45,16 @@ export const components = {
 	berita_overview: BeritaOverview,
 	children: Children,
 	ekstra_overview: EkstraOverview,
+	fasilitas: Fasilitas,
 	footer_main: FooterMain,
 	gallery_overview: GalleryOverview,
 	header: Header,
 	image: Image,
 	komite_grid: KomiteGrid,
+	kurikulum: Kurikulum,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,
-	tentangkami: Tentangkami,
+	tentangkami: Tentangkami
 };
+
