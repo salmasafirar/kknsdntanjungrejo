@@ -53,16 +53,23 @@ const GalleryOverview = ({ slice, context }: SliceComponentProps<GalleryOverview
 							elementClassNames="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-3 gap-y-4"
 							plugins={[lgThumbnail]}
 						>
-							{gallery.map((item: any, index: any) => (
-								<img
+							{galleryList.map((item: any, index: any) => (
+								<div
+									className="aspect-square cursor-pointer duration-200 relative group/gal"
 									key={index}
-									alt={item.data.image.alt}
-									className="aspect-square object-cover cursor-pointer hover:brightness-90 duration-200"
-									src={item.data.image.url}
 									data-src={item.data.image.url}
 									data-title={asText(item.data.title)}
 									data-sub-html={asText(item.data.description)}
-								/>
+								>
+									<div className="absolute inset-0 bg-gray-800/0 duration-200 group-hover/gal:bg-gray-900/40 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover/gal:opacity-100 font-medium">
+										Lihat
+									</div>
+									<img
+										alt={item.data.image.alt}
+										className="w-full h-full object-cover"
+										src={item.data.image.url}
+									/>
+								</div>
 							))}
 						</LightGallery>
 					)}
