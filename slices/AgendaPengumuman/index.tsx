@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import { format } from 'date-fns';
+import Link from '@components/_shared/Link';
 
 /**
  * @typedef {import("@prismicio/client").Content.AgendaPengumumanSlice} AgendaPengumumanSlice
@@ -154,7 +155,9 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 									<div className="text-center text-gray-500 py-6">Tidak ada agenda terkini</div>
 								)}
 							</div>
-							<div className="btn-primary w-max px-4 ml-auto -sm:w-full">Lihat semua</div>
+							<Link href="/pengumuman" className="btn-primary w-max px-4 ml-auto -sm:w-full">
+								Lihat semua
+							</Link>
 						</div>
 						<div className="md:pl-10 -md:pt-10">
 							<div className="flex items-center gap-2">
@@ -183,7 +186,9 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 									<div className="text-center text-gray-500 py-6">Tidak ada pengumuman terkini</div>
 								)}
 							</div>
-							<div className="btn-primary w-max px-4 ml-auto -sm:w-full">Lihat semua</div>
+							<Link href="/pengumuman" className="btn-primary w-max px-4 ml-auto -sm:w-full">
+								Lihat semua
+							</Link>
 						</div>
 					</div>
 				</div>

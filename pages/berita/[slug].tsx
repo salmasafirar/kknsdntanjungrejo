@@ -21,7 +21,7 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 
 	const { news } = context;
 
-	const limitNews = news.slice(0, 5);
+	const limitNews = news.slice(0, 3);
 
 	return (
 		<DynamicLayout content={layout_content} title={title} key={router.asPath}>
@@ -53,27 +53,16 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 				<div className="md:col-span-3 md:pl-8 -md:pt-4">
 					<div className="sticky top-28 right-0 pb-10 md:pb-20">
 						<h1 className="text-lg pl-3 border-l-4 border-green-500 font-medium">Berita Lainnya</h1>
-						<div className="mt-6">
+						<div className="mt-6 flex flex-col gap-3">
 							{limitNews &&
 								limitNews.map((item: any) => {
 									const { title = '', description = '', date = '', image } = item.data;
 									return (
 										<Link href={`/berita/${item.uid}`} key={item.uid}>
-											<div className="flex items-center bg-white shadow-sm px-2 py-1.5">
-												<div className="w-1/4 h-[80px] relative bg-gray-300">
-													{image && (
-														<Image
-															src={image.url}
-															alt={image.alt || 'cover'}
-															layout="fill"
-															objectFit="cover"
-														/>
-													)}
-												</div>
-
+											<div className="flex items-center bg-white shadow-sm px-2 py-2">
 												<div
 													key={item.uid}
-													className="w-3/4 px-3 bg-white mb-3 cursor-pointer hover:bg-gray-50"
+													className="px-3 bg-white cursor-pointer hover:bg-gray-50"
 												>
 													<p className="text-xs text-green-500">
 														{formatDate(new Date(date), 'dd MMMM yyyy')}
@@ -89,7 +78,7 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 								})}
 						</div>
 						<Link href="/berita">
-							<div className="btn-primary mt-8">Lihat semua berita</div>
+							<div className="btn-primary mt-8 w-max">Lihat semua berita</div>
 						</Link>
 					</div>
 				</div>
