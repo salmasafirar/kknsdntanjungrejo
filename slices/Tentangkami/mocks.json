@@ -20,13 +20,12 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Cupidatat commodo laboris pariatur in eiusmod duis incididunt duis ex cillum exercitation cupidatat dolore labore."
+              "text": "Aliquip tempor et mollit veniam cupidatat nulla nulla sunt. Anim anim ea tempor excepteur adipisicing."
             }
           }
         ]
       },
       "image": {
-        "__TYPE__": "ImageContent",
         "origin": {
           "id": "main",
           "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
@@ -44,6 +43,9 @@
           },
           "background": "transparent"
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
       }
     },

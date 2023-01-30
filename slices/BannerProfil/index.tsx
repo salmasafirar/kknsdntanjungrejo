@@ -23,7 +23,12 @@ type BannerProfilSliceType = PrismicT.Slice<'BannerProfil', Record<any, any>, It
 const Profil = ({ slice, context }: any) => {
 	return (
 		// <section className="mt-10 py-5 md:py-8 w-full">
-		<section className="relative w-full bg-[url(https://images.prismic.io/sdntanjungrejo01/5bb94208-317f-4194-8952-69f7f100d30b_20230118_111933%281%29.jpg?auto=compress,format)] bg-cover bg-center bg-no-repeat mt-10 py-5 md:py-8">
+		<section
+			className="relative w-full bg-cover bg-center bg-no-repeat mt-10 py-5 md:py-8"
+			style={{
+				backgroundImage: `url(${slice.primary.image.url})`
+			}}
+		>
 			<div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
 
 			<div className="relative mx-auto max-w-screen-xl px-4 py-20 sm:px-6 lg:items-center">

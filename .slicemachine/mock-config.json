@@ -99,7 +99,18 @@
     },
     "Profil": {},
     "BannerProfil": {},
-    "Tentangkami": {},
+    "Tentangkami": {
+      "default": {
+        "primary": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
     "KomiteGrid": {},
     "GalleryOverview": {},
     "EkstraOverview": {}
