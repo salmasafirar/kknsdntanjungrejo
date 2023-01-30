@@ -284,7 +284,7 @@ interface PagesDocumentData {
  * Slice for *Pages → Slice Zone*
  *
  */
-type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice | ProfilSlice | TentangkamiSlice | KomiteGridSlice | GalleryOverviewSlice;
+type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice | ProfilSlice | TentangkamiSlice | KomiteGridSlice | GalleryOverviewSlice | EkstraOverviewSlice;
 /**
  * Pages document from Prismic
  *
@@ -341,6 +341,74 @@ interface PengumumanDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PengumumanDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PengumumanDocumentData>, "pengumuman", Lang>;
+/** Content for Ekstrakurikuler documents */
+interface ProgramDocumentData {
+    /**
+     * Layout field in *Ekstrakurikuler*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: program.layout
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    layout: prismicT.RelationField;
+    /**
+     * Title field in *Ekstrakurikuler*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: program.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Descriptions field in *Ekstrakurikuler*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: program.descriptions
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    descriptions: prismicT.RichTextField;
+    /**
+     * Date field in *Ekstrakurikuler*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: program.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
+     * Image field in *Ekstrakurikuler*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: program.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Ekstrakurikuler document from Prismic
+ *
+ * - **API ID**: `program`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProgramDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProgramDocumentData>, "program", Lang>;
 /** Content for Redirect Link documents */
 interface RedirectLinkDocumentData {
     /**
@@ -365,7 +433,7 @@ interface RedirectLinkDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type RedirectLinkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<RedirectLinkDocumentData>, "redirect_link", Lang>;
-export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | PengumumanDocument | RedirectLinkDocument;
+export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | PengumumanDocument | ProgramDocument | RedirectLinkDocument;
 /**
  * Default variation for AgendaPengumuman Slice
  *
@@ -580,6 +648,66 @@ type ChildrenSliceVariation = ChildrenSliceDefault;
  *
  */
 export type ChildrenSlice = prismicT.SharedSlice<"children", ChildrenSliceVariation>;
+/**
+ * Primary content in EkstraOverview → Primary
+ *
+ */
+interface EkstraOverviewSliceDefaultPrimary {
+    /**
+     * Title field in *EkstraOverview → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: ekstra_overview.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *EkstraOverview → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: ekstra_overview.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * TampilkanSemua field in *EkstraOverview → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: ekstra_overview.primary.tampilkansemua
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    tampilkansemua: prismicT.BooleanField;
+}
+/**
+ * Default variation for EkstraOverview Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `EkstraOverview`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EkstraOverviewSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<EkstraOverviewSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *EkstraOverview*
+ *
+ */
+type EkstraOverviewSliceVariation = EkstraOverviewSliceDefault;
+/**
+ * EkstraOverview Shared Slice
+ *
+ * - **API ID**: `ekstra_overview`
+ * - **Description**: `EkstraOverview`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EkstraOverviewSlice = prismicT.SharedSlice<"ekstra_overview", EkstraOverviewSliceVariation>;
 /**
  * Primary content in FooterMain → Primary
  *
@@ -1165,6 +1293,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, ProgramDocumentData, ProgramDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
     }
 }

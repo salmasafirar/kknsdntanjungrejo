@@ -19,7 +19,8 @@
     },
     "gallery": {},
     "agenda": {},
-    "pengumuman": {}
+    "pengumuman": {},
+    "program": {}
   },
   "slices": {
     "Paragraph": {
@@ -100,6 +101,7 @@
     "BannerProfil": {},
     "Tentangkami": {},
     "KomiteGrid": {},
-    "GalleryOverview": {}
+    "GalleryOverview": {},
+    "EkstraOverview": {}
   }
 }

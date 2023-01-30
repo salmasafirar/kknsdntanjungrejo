@@ -5,6 +5,7 @@ import Banner from './Banner';
 import BannerProfil from './BannerProfil';
 import BeritaOverview from './BeritaOverview';
 import Children from './Children';
+import EkstraOverview from './EkstraOverview';
 import FooterMain from './FooterMain';
 import GalleryOverview from './GalleryOverview';
 import Header from './Header';
@@ -21,6 +22,7 @@ export {
 	BannerProfil,
 	BeritaOverview,
 	Children,
+	EkstraOverview,
 	FooterMain,
 	GalleryOverview,
 	Header,
@@ -38,6 +40,7 @@ export const components = {
 	profil: BannerProfil,
 	berita_overview: BeritaOverview,
 	children: Children,
+	ekstra_overview: EkstraOverview,
 	footer_main: FooterMain,
 	gallery_overview: GalleryOverview,
 	header: Header,

@@ -59,7 +59,7 @@ const FooterMain = ({
 										/>
 									</svg>
 
-									<span className="text-gray-700">john@doe.com</span>
+									<span className="text-gray-700">sdntanjungrejo01@gmail.com</span>
 								</a>
 							</li>
 
@@ -106,7 +106,7 @@ const FooterMain = ({
 								</svg>
 
 								<address className="-mt-0.5 not-italic text-gray-700">
-									213 Lane, London, United Kingdom
+									Dusun Melikan, Desa Tanjungrejo, Sukoharjo, Jawa Tengah
 								</address>
 							</li>
 						</ul>

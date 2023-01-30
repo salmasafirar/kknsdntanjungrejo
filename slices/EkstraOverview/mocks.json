@@ -1,0 +1,40 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Afraid"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Qui culpa id dolor dolore in laborum excepteur laboris Lorem enim sunt excepteur fugiat esse elit. Laboris labore duis consectetur minim id dolor velit."
+            }
+          }
+        ]
+      },
+      "tampilkansemua": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]
