@@ -119,6 +119,11 @@
       }
     },
     "Fasilitas": {},
-    "Kurikulum": {}
+    "Kurikulum": {},
+    "Location": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

@@ -1,0 +1,47 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "lose",
+        "type": "Text"
+      },
+      "googleMap": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://google.com"
+        }
+      },
+      "alamat": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Lorem tempor culpa magna anim irure aute exercitation ut sint dolore aliquip commodo elit reprehenderit sit. Consequat aliqua velit mollit do magna ea magna magna ad excepteur in exercitation voluptate eiusmod."
+            }
+          }
+        ]
+      },
+      "longitude": {
+        "__TYPE__": "FieldContent",
+        "value": "16",
+        "type": "Number"
+      },
+      "latitude": {
+        "__TYPE__": "FieldContent",
+        "value": "35",
+        "type": "Number"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

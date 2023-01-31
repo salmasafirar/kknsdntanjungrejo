@@ -31,7 +31,7 @@ const Profil = ({ slice, context }: any) => {
 		>
 			<div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"></div>
 
-			<div className="relative mx-auto max-w-screen-xl px-4 py-20 sm:px-6 lg:items-center">
+			<div className="relative mx-auto max-w-7xl container py-20 lg:items-center">
 				<div className="max-w-xl text-center sm:text-left">
 					<div className="text-3xl font-extrabold sm:text-5xl">
 						{slice.primary.title && (

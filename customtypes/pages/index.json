@@ -76,6 +76,9 @@
             },
             "fasilitas": {
               "type": "SharedSlice"
+            },
+            "location": {
+              "type": "SharedSlice"
             }
           }
         }

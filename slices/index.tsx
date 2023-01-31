@@ -13,6 +13,7 @@ import Header from './Header';
 import Image from './Image';
 import KomiteGrid from './KomiteGrid';
 import Kurikulum from './Kurikulum';
+import Location from './Location';
 import NavbarMain from './NavbarMain';
 import Paragraph from './Paragraph';
 import Tentang from './Tentang';
@@ -32,6 +33,7 @@ export {
 	Image,
 	KomiteGrid,
 	Kurikulum,
+	Location,
 	NavbarMain,
 	Paragraph,
 	Tentang,
@@ -52,6 +54,7 @@ export const components = {
 	image: Image,
 	komite_grid: KomiteGrid,
 	kurikulum: Kurikulum,
+	location: Location,
 	navbar_main: NavbarMain,
 	paragraph: Paragraph,
 	tentang: Tentang,

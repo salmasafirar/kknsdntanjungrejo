@@ -11,6 +11,9 @@
 	.btn-primary {
 		@apply px-4 cursor-pointer text-sm py-2 w-full bg-green-500 mt-8 text-white active:bg-green-600 hover:bg-green-400 duration-200 flex justify-center shadow-sm rounded-sm;
 	}
+	.btn-secondary {
+		@apply px-4 cursor-pointer text-sm py-2 w-full bg-gray-200 mt-8 text-gray-800 active:bg-gray-200 hover:bg-gray-300 duration-200 flex justify-center shadow-sm rounded-sm;
+	}
 
 	button[data-loading='true'] i.spinner {
 		@apply inline-flex ml-2;

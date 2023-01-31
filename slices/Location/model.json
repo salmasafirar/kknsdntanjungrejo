@@ -1,0 +1,57 @@
+{
+  "id": "location",
+  "type": "SharedSlice",
+  "name": "Location",
+  "description": "Location",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Location",
+      "primary": {
+        "googleMap": {
+          "type": "Link",
+          "config": {
+            "label": "Google Map Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "alamat": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Alamat",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "longitude": {
+          "type": "Number",
+          "config": {
+            "label": "Longitude",
+            "placeholder": ""
+          }
+        },
+        "latitude": {
+          "type": "Number",
+          "config": {
+            "label": "Latitude",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

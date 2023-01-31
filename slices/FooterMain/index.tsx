@@ -32,16 +32,13 @@ const FooterMain = ({
 							</div>
 						</div>
 						<p>{logo.alt}</p>
-
-						<div className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:mx-0 sm:max-w-xs sm:text-left">
-							<PrismicRichText field={address} />
-						</div>
+					</div>
+					<div className="mx-auto max-w-md text-center leading-relaxed text-gray-500 sm:mx-0 sm:max-w-xs sm:text-left">
+						<PrismicRichText field={address} />
 					</div>
 
 					<div className="text-center sm:text-left">
-						<p className="text-lg font-medium text-gray-900">Contact Us</p>
-
-						<ul className="mt-8 space-y-4 text-sm">
+						<ul className="space-y-4 text-sm">
 							<li>
 								<a className="flex items-center justify-center gap-1.5 sm:justify-start" href="/">
 									<svg
@@ -113,7 +110,7 @@ const FooterMain = ({
 					</div>
 					{/* </div> */}
 
-					<div className="">
+					{/* <div className="">
 						<Map
 							mapboxAccessToken="pk.eyJ1IjoibXVkemlrYWwiLCJhIjoiY2xkNGhvYWI5MHNydTN2bDBwcXB5bnQwNSJ9.3Ii_7bwP2P8jQJdP7zGDhQ"
 							initialViewState={{
@@ -140,7 +137,7 @@ const FooterMain = ({
 								</svg>
 							</Marker>
 						</Map>
-					</div>
+					</div> */}
 				</div>
 
 				<div className="mt-12 border-t border-gray-100 pt-6">
