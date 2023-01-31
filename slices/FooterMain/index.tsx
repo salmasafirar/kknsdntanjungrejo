@@ -12,7 +12,7 @@ const FooterMain = ({
 	slice,
 	context: { lowerRef }
 }: SliceComponentProps<FooterMainSlice, ContextType>) => {
-	const { logo, address } = slice.primary;
+	const { logo, address, email, nohp } = slice.primary;
 	return (
 		<footer aria-label="Site Footer" className="bg-white" ref={lowerRef}>
 			<div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-16">
@@ -39,49 +39,53 @@ const FooterMain = ({
 
 					<div className="text-center sm:text-left">
 						<ul className="space-y-4 text-sm">
-							<li>
-								<a className="flex items-center justify-center gap-1.5 sm:justify-start" href="/">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="h-5 w-5 shrink-0 text-gray-900"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth="2"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-										/>
-									</svg>
+							{email && (
+								<li>
+									<a className="flex items-center justify-center gap-1.5 sm:justify-start" href="/">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-5 w-5 shrink-0 text-gray-900"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+											strokeWidth="2"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+											/>
+										</svg>
 
-									<span className="text-gray-700">sdntanjungrejo01@gmail.com</span>
-								</a>
-							</li>
+										<span className="text-gray-700">{email}</span>
+									</a>
+								</li>
+							)}
 
-							<li>
-								<a className="flex items-center justify-center gap-1.5 sm:justify-start" href="/">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="h-5 w-5 shrink-0 text-gray-900"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth="2"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-										/>
-									</svg>
+							{nohp && (
+								<li>
+									<a className="flex items-center justify-center gap-1.5 sm:justify-start" href="/">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-5 w-5 shrink-0 text-gray-900"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+											strokeWidth="2"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+											/>
+										</svg>
 
-									<span className="text-gray-700">0123456789</span>
-								</a>
-							</li>
+										<span className="text-gray-700">{nohp}</span>
+									</a>
+								</li>
+							)}
 
-							<li className="flex items-start justify-center gap-1.5 sm:justify-start">
+							{/* <li className="flex items-start justify-center gap-1.5 sm:justify-start">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									className="h-5 w-5 shrink-0 text-gray-900"
@@ -105,7 +109,7 @@ const FooterMain = ({
 								<address className="-mt-0.5 not-italic text-gray-700">
 									Dusun Melikan, Desa Tanjungrejo, Sukoharjo, Jawa Tengah
 								</address>
-							</li>
+							</li> */}
 						</ul>
 					</div>
 					{/* </div> */}
@@ -143,11 +147,11 @@ const FooterMain = ({
 				<div className="mt-12 border-t border-gray-100 pt-6">
 					<div className="text-center sm:flex sm:justify-between sm:text-left">
 						<p className="text-sm text-gray-500">
-							<span className="block sm:inline">Created with ❤️ by KKN TIM I UNDIP 2023</span>
+							<span className="block sm:inline">Created with ❤️ by KKN UNDIP 2023</span>
 						</p>
 
 						<p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-							&copy; 2023 SDN Tanjungrejo 01.
+							&copy; 2023 SDN Tanjungrejo 01
 						</p>
 					</div>
 				</div>

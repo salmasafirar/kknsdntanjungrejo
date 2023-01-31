@@ -2,7 +2,18 @@
   {
     "__TYPE__": "SharedSliceContent",
     "variation": "default",
-    "primary": {},
+    "primary": {
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "everything",
+        "type": "Text"
+      },
+      "nohp": {
+        "__TYPE__": "FieldContent",
+        "value": "rose",
+        "type": "Text"
+      }
+    },
     "items": [
       {
         "__TYPE__": "GroupItemContent",

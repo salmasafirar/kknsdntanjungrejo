@@ -23,7 +23,7 @@ const Location = ({ slice }: SliceComponentProps<LocationSlice>) => {
 						initialViewState={{
 							longitude: longitude || 110.926966,
 							latitude: latitude || -7.764888,
-							zoom: 16
+							zoom: 15
 						}}
 						style={{
 							width: sm ? '50%' : '100%',
@@ -33,7 +33,11 @@ const Location = ({ slice }: SliceComponentProps<LocationSlice>) => {
 						scrollZoom={false}
 					>
 						<NavigationControl />
-						<Marker longitude={110.926966} latitude={-7.764888} anchor="bottom">
+						<Marker
+							longitude={longitude || 110.926966}
+							latitude={latitude || -7.764888}
+							anchor="bottom"
+						>
 							<svg
 								aria-hidden="true"
 								fill="currentColor"

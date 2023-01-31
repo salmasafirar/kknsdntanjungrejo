@@ -25,6 +25,12 @@ const Paragraph = ({ slice }: SliceComponentProps<ParagraphSlice, ContextType>) 
 						{children}
 					</p>
 				),
+				listItem: ({ children }) => (
+					<li className="text-base text-gray-800 mb-2 -md:leading-normal leading-relaxed flex items-center space-x-2">
+						<span className="w-4 h-4 bg-green-500 rounded-full"></span>
+						<div>{children}</div>
+					</li>
+				),
 				strong: ({ children }) => (
 					<span className="px-0.5 bg-green-500 text-white w-max mb-2">{children}</span>
 				)

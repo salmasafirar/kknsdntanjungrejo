@@ -10,7 +10,22 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "Children",
-      "primary": {},
+      "primary": {
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        },
+        "nohp": {
+          "type": "Text",
+          "config": {
+            "label": "Nohp",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }

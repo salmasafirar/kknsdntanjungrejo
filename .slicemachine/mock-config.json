@@ -115,7 +115,8 @@
     "GalleryOverview": {},
     "EkstraOverview": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {}
       }
     },
     "Fasilitas": {},

@@ -16,14 +16,17 @@ const EkstraOverview = ({
 	const { description, title } = slice.primary;
 
 	return (
-		<section className="w-full py-10 md:py-16">
+		<section className="w-full pt-16 md:pt-24 last:pb-20">
 			<div className="container max-w-7xl">
 				<h1 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800 w-max">
 					{asText(title)}
 				</h1>
-				<div className="mt-10 flex flex-col gap-10">
+				<div className="text-sm mt-3 text-gray-500">
+					<PrismicRichText field={description} />
+				</div>
+				<div className="mt-10 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 sm:gap-4 md:gap-10">
 					{slice.items.map((data, idx) => (
-						<Ekstra reverse={idx % 2 === 0} data={data} />
+						<Ekstra data={data} key={idx} />
 					))}
 				</div>
 			</div>
@@ -31,25 +34,16 @@ const EkstraOverview = ({
 	);
 };
 
-const Ekstra = ({ reverse, data }: { reverse: boolean; data: any }) => (
-	<div className={`${!reverse ? 'flex-row-reverse' : ''} flex justify-between gap-10`}>
-		<div className="w-1/3 aspect-square">
+const Ekstra = ({ data }: { data: any }) => (
+	<div>
+		<div className="aspect-4/3">
 			<img src={data.image.url} alt="" className="w-full h-full object-cover" />
 		</div>
-		<div
-			style={{
-				textAlign: reverse ? 'left' : 'right'
-			}}
-			className="w-2/3 flex flex-col justify-center"
-		>
-			<div className="text-3xl font-bold mb-6">
+		<div className="flex flex-col justify-center text-center">
+			<div className="md:text-lg font-semibold mt-2">
 				<PrismicRichText field={data.nama} />
 			</div>
-			<div
-				style={{
-					textAlign: reverse ? 'left' : 'right'
-				}}
-			>
+			<div className="text-xs sm:text-sm mt-1 text-gray-500">
 				<PrismicRichText field={data.description} />
 			</div>
 		</div>
@@ -57,4 +51,3 @@ const Ekstra = ({ reverse, data }: { reverse: boolean; data: any }) => (
 );
 
 export default EkstraOverview;
-

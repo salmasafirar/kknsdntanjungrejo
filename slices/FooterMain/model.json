@@ -27,24 +27,23 @@
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        }
-      },
-      "items": {
-        "text": {
-          "config": {
-            "label": "Text",
-            "placeholder": ""
-          },
-          "type": "Text"
         },
-        "route": {
+        "email": {
           "type": "Text",
           "config": {
-            "label": "route",
+            "label": "email",
+            "placeholder": ""
+          }
+        },
+        "nohp": {
+          "type": "Text",
+          "config": {
+            "label": "nohp",
             "placeholder": ""
           }
         }
       },
+      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]

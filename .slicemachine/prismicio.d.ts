@@ -284,7 +284,7 @@ interface PagesDocumentData {
  * Slice for *Pages → Slice Zone*
  *
  */
-type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice | ProfilSlice | TentangkamiSlice | KomiteGridSlice | GalleryOverviewSlice | EkstraOverviewSlice | KurikulumSlice | ImageSlice | FasilitasSlice | LocationSlice;
+type PagesDocumentDataSlicesSlice = BannerSlice | BeritaOverviewSlice | TentangSlice | AgendaPengumumanSlice | ProfilSlice | TentangkamiSlice | KomiteGridSlice | GalleryOverviewSlice | EkstraOverviewSlice | KurikulumSlice | ImageSlice | LocationSlice;
 /**
  * Pages document from Prismic
  *
@@ -643,6 +643,32 @@ type BeritaOverviewSliceVariation = BeritaOverviewSliceDefault;
  */
 export type BeritaOverviewSlice = prismicT.SharedSlice<"berita_overview", BeritaOverviewSliceVariation>;
 /**
+ * Primary content in Children → Primary
+ *
+ */
+interface ChildrenSliceDefaultPrimary {
+    /**
+     * Email field in *Children → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: children.primary.email
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    email: prismicT.KeyTextField;
+    /**
+     * Nohp field in *Children → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: children.primary.nohp
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    nohp: prismicT.KeyTextField;
+}
+/**
  * Default variation for Children Slice
  *
  * - **API ID**: `default`
@@ -650,7 +676,7 @@ export type BeritaOverviewSlice = prismicT.SharedSlice<"berita_overview", Berita
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type ChildrenSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, never>;
+export type ChildrenSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ChildrenSliceDefaultPrimary>, never>;
 /**
  * Slice variation for *Children*
  *
@@ -726,26 +752,6 @@ export interface EkstraOverviewSliceDefaultItem {
      *
      */
     image: prismicT.ImageField<never>;
-    /**
-     * Hari field in *EkstraOverview → Items*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: ekstra_overview.items[].hari
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    hari: prismicT.KeyTextField;
-    /**
-     * Tempat field in *EkstraOverview → Items*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: ekstra_overview.items[].tempat
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    tempat: prismicT.KeyTextField;
 }
 /**
  * Default variation for EkstraOverview Slice
@@ -854,32 +860,26 @@ interface FooterMainSliceDefaultPrimary {
      *
      */
     address: prismicT.RichTextField;
-}
-/**
- * Item in FooterMain → Items
- *
- */
-export interface FooterMainSliceDefaultItem {
     /**
-     * Text field in *FooterMain → Items*
+     * email field in *FooterMain → Primary*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: footer_main.items[].text
+     * - **API ID Path**: footer_main.primary.email
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    text: prismicT.KeyTextField;
+    email: prismicT.KeyTextField;
     /**
-     * route field in *FooterMain → Items*
+     * nohp field in *FooterMain → Primary*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: footer_main.items[].route
+     * - **API ID Path**: footer_main.primary.nohp
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    route: prismicT.KeyTextField;
+    nohp: prismicT.KeyTextField;
 }
 /**
  * Default variation for FooterMain Slice
@@ -889,7 +889,7 @@ export interface FooterMainSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type FooterMainSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterMainSliceDefaultPrimary>, Simplify<FooterMainSliceDefaultItem>>;
+export type FooterMainSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterMainSliceDefaultPrimary>, never>;
 /**
  * Slice variation for *FooterMain*
  *
@@ -1552,6 +1552,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, ProgramDocumentData, ProgramDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefaultPrimary, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefaultItem, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FasilitasSliceDefaultPrimary, FasilitasSliceDefault, FasilitasSliceVariation, FasilitasSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefaultItem, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, KurikulumSliceDefaultPrimary, KurikulumSliceDefault, KurikulumSliceVariation, KurikulumSlice, LocationSliceDefaultPrimary, LocationSliceDefault, LocationSliceVariation, LocationSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, ProgramDocumentData, ProgramDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefaultPrimary, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefaultPrimary, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefaultItem, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FasilitasSliceDefaultPrimary, FasilitasSliceDefault, FasilitasSliceVariation, FasilitasSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, KurikulumSliceDefaultPrimary, KurikulumSliceDefault, KurikulumSliceVariation, KurikulumSlice, LocationSliceDefaultPrimary, LocationSliceDefault, LocationSliceVariation, LocationSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
     }
 }

@@ -78,7 +78,7 @@ const CustomPage = ({ content, layout_content, context }: any): JSX.Element => {
 								})}
 						</div>
 						<Link href="/berita">
-							<div className="btn-primary mt-8 w-max">Lihat semua berita</div>
+							<div className="btn-secondary mt-8 w-max">Lihat semua</div>
 						</Link>
 					</div>
 				</div>

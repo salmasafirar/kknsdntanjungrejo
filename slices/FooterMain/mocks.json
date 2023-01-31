@@ -36,29 +36,22 @@
             }
           }
         ]
+      },
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "previous",
+        "type": "Text"
+      },
+      "nohp": {
+        "__TYPE__": "FieldContent",
+        "value": "distance",
+        "type": "Text"
       }
     },
     "items": [
       {
         "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "text",
-            {
-              "__TYPE__": "FieldContent",
-              "value": "camera",
-              "type": "Text"
-            }
-          ],
-          [
-            "route",
-            {
-              "__TYPE__": "FieldContent",
-              "value": "way",
-              "type": "Text"
-            }
-          ]
-        ]
+        "value": []
       }
     ]
   }

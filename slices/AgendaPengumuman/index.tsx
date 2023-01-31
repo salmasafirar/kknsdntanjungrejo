@@ -49,8 +49,6 @@ const AgendaPengumuman = ({ slice, context }: any) => {
 	const [month, setMonth] = React.useState(new Date().getMonth());
 	const [year, setYear] = React.useState(new Date().getFullYear());
 
-	console.log(year);
-
 	// const scrollPosition = useScrollPosition();
 
 	const agendaList = useMemo(() => {

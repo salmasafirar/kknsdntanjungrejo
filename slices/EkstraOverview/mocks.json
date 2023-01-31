@@ -83,22 +83,6 @@
               "__TYPE__": "ImageContent",
               "thumbnails": {}
             }
-          ],
-          [
-            "hari",
-            {
-              "__TYPE__": "FieldContent",
-              "value": "then",
-              "type": "Text"
-            }
-          ],
-          [
-            "tempat",
-            {
-              "__TYPE__": "FieldContent",
-              "value": "exciting",
-              "type": "Text"
-            }
           ]
         ]
       }
