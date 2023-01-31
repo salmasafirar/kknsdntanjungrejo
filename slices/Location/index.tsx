@@ -27,7 +27,7 @@ const Location = ({ slice }: SliceComponentProps<LocationSlice>) => {
 						}}
 						style={{
 							width: sm ? '50%' : '100%',
-							height: 400
+							height: sm ? 400 : 300
 						}}
 						mapStyle="mapbox://styles/mapbox/streets-v9"
 						scrollZoom={false}

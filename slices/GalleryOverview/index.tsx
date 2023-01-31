@@ -60,7 +60,7 @@ const GalleryOverview = ({ slice, context }: SliceComponentProps<GalleryOverview
 									key={index}
 									data-src={item.data.image.url}
 									data-title={asText(item.data.title)}
-									data-sub-html={asText(item.data.description)}
+									data-sub-html={asText(item.data.title) + ' - ' + asText(item.data.description)}
 								>
 									<div className="absolute z-10 inset-0 bg-gray-800/0 duration-200 group-hover/gal:bg-gray-900/40 flex justify-center items-center text-white text-sm md:text-base opacity-0 group-hover/gal:opacity-100 font-medium">
 										Lihat
