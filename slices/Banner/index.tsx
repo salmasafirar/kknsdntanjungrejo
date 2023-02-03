@@ -124,7 +124,7 @@ const Banner = ({ slice }: SliceComponentProps<BannerSliceType, ContextType>) =>
 					</div>
 					<div className="">
 						{isFilled.keyText(slice.items[step].button) && (
-							<Link href="/" className="btn-custom">
+							<Link href={slice.items[step].href || '/'} className="btn-custom">
 								<div>{slice.items[step].button}</div>
 							</Link>
 						)}
