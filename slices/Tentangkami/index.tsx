@@ -18,7 +18,7 @@ const Tentangkami = ({ slice, context }: any) => (
 					)}
 				</div>
 			</div>
-			<div className="mt-4 text-gray-600 text-justify -md:text-sm -sm:leading-loose leading-relaxed">
+			<div className="mt-4 text-gray-800 text-justify -md:text-sm -sm:leading-loose leading-relaxed">
 				<hr className="h-px my-6 bg-gray-200 border-0"></hr>
 				<div>
 					{slice.primary.description && (
@@ -32,7 +32,9 @@ const Tentangkami = ({ slice, context }: any) => (
 									</li>
 								),
 								strong: ({ children }) => (
-									<span className="px-0.5 bg-green-500 text-white w-max mb-2">{children}</span>
+									<span className="px-0.5 bg-gray-800 text-white w-max mb-4 md:mb-6">
+										{children}
+									</span>
 								)
 							}}
 						/>

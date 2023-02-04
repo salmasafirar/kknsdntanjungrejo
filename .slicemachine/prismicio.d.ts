@@ -341,74 +341,6 @@ interface PengumumanDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PengumumanDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PengumumanDocumentData>, "pengumuman", Lang>;
-/** Content for Ekstrakurikuler documents */
-interface ProgramDocumentData {
-    /**
-     * Layout field in *Ekstrakurikuler*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: program.layout
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    layout: prismicT.RelationField;
-    /**
-     * Title field in *Ekstrakurikuler*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: program.title
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.RichTextField;
-    /**
-     * Descriptions field in *Ekstrakurikuler*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: program.descriptions
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    descriptions: prismicT.RichTextField;
-    /**
-     * Date field in *Ekstrakurikuler*
-     *
-     * - **Field Type**: Date
-     * - **Placeholder**: *None*
-     * - **API ID Path**: program.date
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/date
-     *
-     */
-    date: prismicT.DateField;
-    /**
-     * Image field in *Ekstrakurikuler*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: program.image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
-}
-/**
- * Ekstrakurikuler document from Prismic
- *
- * - **API ID**: `program`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ProgramDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProgramDocumentData>, "program", Lang>;
 /** Content for Redirect Link documents */
 interface RedirectLinkDocumentData {
     /**
@@ -433,7 +365,7 @@ interface RedirectLinkDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type RedirectLinkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<RedirectLinkDocumentData>, "redirect_link", Lang>;
-export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | PengumumanDocument | ProgramDocument | RedirectLinkDocument;
+export type AllDocumentTypes = AgendaDocument | BeritaDocument | GalleryDocument | LayoutsDocument | PagesDocument | PengumumanDocument | RedirectLinkDocument;
 /**
  * Primary content in AgendaPengumuman → Primary
  *
@@ -1029,16 +961,6 @@ export type HeaderSlice = prismicT.SharedSlice<"header", HeaderSliceVariation>;
  */
 interface ImageSliceDefaultPrimary {
     /**
-     * Title field in *Image → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: image.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
      * Image field in *Image → Primary*
      *
      * - **Field Type**: Image
@@ -1552,6 +1474,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, ProgramDocumentData, ProgramDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefaultPrimary, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefaultPrimary, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefaultItem, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FasilitasSliceDefaultPrimary, FasilitasSliceDefault, FasilitasSliceVariation, FasilitasSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, KurikulumSliceDefaultPrimary, KurikulumSliceDefault, KurikulumSliceVariation, KurikulumSlice, LocationSliceDefaultPrimary, LocationSliceDefault, LocationSliceVariation, LocationSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
+        export type { AgendaDocumentData, AgendaDocument, BeritaDocumentData, BeritaDocumentDataSlicesSlice, BeritaDocument, GalleryDocumentData, GalleryDocument, LayoutsDocumentData, LayoutsDocumentDataSlicesSlice, LayoutsDocument, PagesDocumentData, PagesDocumentDataSlicesSlice, PagesDocument, PengumumanDocumentData, PengumumanDocument, RedirectLinkDocumentData, RedirectLinkDocument, AllDocumentTypes, AgendaPengumumanSliceDefaultPrimary, AgendaPengumumanSliceDefault, AgendaPengumumanSliceVariation, AgendaPengumumanSlice, BannerSliceDefaultItem, BannerSliceDefault, BannerSliceVariation, BannerSlice, ProfilSliceDefaultPrimary, ProfilSliceDefault, ProfilSliceVariation, ProfilSlice, BeritaOverviewSliceDefaultPrimary, BeritaOverviewSliceDefault, BeritaOverviewSliceVariation, BeritaOverviewSlice, ChildrenSliceDefaultPrimary, ChildrenSliceDefault, ChildrenSliceVariation, ChildrenSlice, EkstraOverviewSliceDefaultPrimary, EkstraOverviewSliceDefaultItem, EkstraOverviewSliceDefault, EkstraOverviewSliceVariation, EkstraOverviewSlice, FasilitasSliceDefaultPrimary, FasilitasSliceDefault, FasilitasSliceVariation, FasilitasSlice, FooterMainSliceDefaultPrimary, FooterMainSliceDefault, FooterMainSliceVariation, FooterMainSlice, GalleryOverviewSliceDefaultPrimary, GalleryOverviewSliceDefault, GalleryOverviewSliceVariation, GalleryOverviewSlice, HeaderSliceDefaultPrimary, HeaderSliceDefault, HeaderSliceVariation, HeaderSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, KomiteGridSliceDefaultPrimary, KomiteGridSliceDefaultItem, KomiteGridSliceDefault, KomiteGridSliceVariation, KomiteGridSlice, KurikulumSliceDefaultPrimary, KurikulumSliceDefault, KurikulumSliceVariation, KurikulumSlice, LocationSliceDefaultPrimary, LocationSliceDefault, LocationSliceVariation, LocationSlice, NavbarMainSliceDefaultPrimary, NavbarMainSliceDefaultItem, NavbarMainSliceDefault, NavbarMainSliceVariation, NavbarMainSlice, ParagraphSliceDefaultPrimary, ParagraphSliceDefault, ParagraphSliceVariation, ParagraphSlice, TentangSliceDefaultPrimary, TentangSliceDefault, TentangSliceVariation, TentangSlice, TentangkamiSliceDefaultPrimary, TentangkamiSliceDefault, TentangkamiSliceVariation, TentangkamiSlice };
     }
 }

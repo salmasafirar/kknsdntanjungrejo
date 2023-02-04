@@ -11,14 +11,6 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Image",
       "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
-          }
-        },
         "image": {
           "type": "Image",
           "config": {
