@@ -45,7 +45,7 @@ const GalleryOverview = ({ slice, context }: SliceComponentProps<GalleryOverview
 						</Link>
 					)}
 				</div>
-				<p className="mt-4 lg:w-1/3 md:w-1/2 text-sm md:text-base">{asText(description)}</p>
+				<p className="mt-6 lg:w-1/3 md:w-1/2 text-sm md:text-base">{asText(description)}</p>
 				<div className="mt-8 md:mt-10">
 					{gallery.length > 0 && (
 						<LightGallery

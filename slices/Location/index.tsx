@@ -60,7 +60,9 @@ const Location = ({ slice }: SliceComponentProps<LocationSlice>) => {
 						<PrismicRichText
 							field={alamat}
 							components={{
-								paragraph: ({ children }) => <p className="mt-6 leading-loose">{children}</p>
+								paragraph: ({ children }) => (
+									<p className="mt-6 leading-loose -md:text-sm -md:leading-loose">{children}</p>
+								)
 							}}
 						/>
 						<PrismicLink
