@@ -12,18 +12,18 @@ import { PrismicNextImage } from '@prismicio/next';
 const Tentangkami = ({ slice, context }: any) => (
 	<section
 		className={`w-full px-6 last:pb-20 sm:px-6 lg:px-6 ${
-			isFilled.image(slice.primary.image) ? 'pt-10 sm:pt-32 sm:pb-10' : 'pt-10 md:pt-16'
+			isFilled.image(slice.primary.image) ? 'pt-10 sm:pt-32 pb-4' : 'pt-10 md:pt-16'
 		}`}
 	>
 		<div className="sm:max-w-7xl -sm:px-4 -sm:py-4 sm:container border border-gray-100 bg-white py-8 shadow-lg shadow-gray-400/10 sm:flex">
 			{isFilled.image(slice.primary.image) && (
-				<div className="w-full sm:w-1/3 sm:mr-10 relative">
-					<div className="w-full h-[200px] sm:h-[350px] overflow-hidden sm:absolute sm:-top-24 shadow-sm">
+				<div className="w-full sm:w-1/4 sm:mr-10 relative">
+					<div className="w-full h-[200px] sm:h-[300px] overflow-hidden sm:absolute sm:-top-20 shadow-sm">
 						<PrismicNextImage field={slice.primary.image} objectFit="cover" layout="fill" />
 					</div>
 				</div>
 			)}
-			<div className={`flex-1 -sm:mt-6 ${isFilled.image(slice.primary.image) ? 'pb-20' : 'pb-0'}`}>
+			<div className={`flex-1 -sm:mt-6 ${isFilled.image(slice.primary.image) ? 'pb-16' : 'pb-0'}`}>
 				<div className="flex justify-between items-center">
 					<div className="text-xl sm:text-xl lg:text-3xl font-semibold text-white py-1 px-3 bg-gray-800">
 						{slice.primary.title ? (
