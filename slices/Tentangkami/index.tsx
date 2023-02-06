@@ -40,18 +40,38 @@ const Tentangkami = ({ slice, context }: any) => (
 							<PrismicRichText
 								field={slice.primary.description}
 								components={{
+									heading1: ({ children }) => (
+										<h1 className="text-xl md:text-3xl font-bold text-gray-800 mb-2 mt-4">
+											{children}
+										</h1>
+									),
+									heading2: ({ children }) => (
+										<h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-2 mt-4">
+											{children}
+										</h2>
+									),
+									heading3: ({ children }) => (
+										<h3 className="text-md md:text-xl font-bold text-gray-800 mb-2 mt-4">
+											{children}
+										</h3>
+									),
+									heading4: ({ children }) => (
+										<h4 className="text-md md:text-lg font-bold text-gray-800 mb-2 mt-4">
+											{children}
+										</h4>
+									),
 									listItem: ({ children }) => (
 										<li className="text-sm sm:text-base text-gray-800 mb-2 -md:leading-normal leading-relaxed flex items-center space-x-3">
 											<span className="w-2 h-2 bg-green-500"></span>
 											<div className="flex-1">{children}</div>
 										</li>
 									),
-
-									strong: ({ children }) => (
-										<span className="px-0.5 bg-gray-800 text-white w-max -md:leading-loose -sm:leading-loose leading-10">
+									paragraph: ({ children }) => (
+										<p className="text-sm sm:text-base text-gray-800 mb-2 -md:leading-normal leading-relaxed">
 											{children}
-										</span>
-									)
+										</p>
+									),
+									strong: ({ children }) => <span className="font-bold">{children}</span>
 								}}
 							/>
 						)}
