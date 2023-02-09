@@ -24,6 +24,8 @@ const KomiteGrid = ({ slice }: SliceComponentProps<KomiteGridSlice>) => {
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-7">
 					{slice.items.map((item, index) => {
 						const { nama, posisi, foto, moreInfo, email, nohp } = item;
+
+						const isFotoFilled = isFilled.image(foto);
 						return (
 							<div className="bg-white shadow-sm border" key={index}>
 								<div
@@ -32,10 +34,12 @@ const KomiteGrid = ({ slice }: SliceComponentProps<KomiteGridSlice>) => {
 										alignItems: email || nohp ? 'flex-start' : 'center'
 									}}
 								>
-									<div className="w-1/4 aspect-3/4 h-full overflow-hidden">
-										<PrismicNextImage field={foto} objectFit="cover" />
-									</div>
-									<div className="w-3/4 pl-4">
+									{isFilled.image(foto) && (
+										<div className="w-1/4 aspect-3/4 h-full overflow-hidden">
+											<PrismicNextImage field={foto} objectFit="cover" />
+										</div>
+									)}
+									<div className={`${isFotoFilled ? 'w-3/4 pl-4' : 'w-full pl-0'}`}>
 										<h4 className="text-lg md:text-xl font-semibold">{nama}</h4>
 										<p className="text-sm text-gray-500">{posisi}</p>
 										<p className="text-xs mt-1.5">{moreInfo}</p>
